@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
@@ -18,8 +16,8 @@ import core.JunnieJobsBlogApplication;
 @SpringApplicationConfiguration(classes = JunnieJobsBlogApplication.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class JunnieJobsBlogApplicationTests {
-
+public class JunitTest {
+	
 	@Value("${local.server.port}")
 	private int port;
 	
@@ -30,5 +28,5 @@ public class JunnieJobsBlogApplicationTests {
 		String result = rt.getForObject("http://localhost:" + port, String.class);
 		System.out.println(result);
 	}
-	
+
 }

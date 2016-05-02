@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -73,6 +74,14 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/static_resources/")
 				.setCachePeriod(CACHE_PERIOD);
 	}
+	
+//	@Bean
+//	  public static PropertySourcesPlaceholderConfigurer propertyConfigIn() {
+//	        return new PropertySourcesPlaceholderConfigurer();
+//	  }
+
+
+
 
 //	@Override
 //	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
