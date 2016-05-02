@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/include/tags.jspf"%>
+<%-- <%@ include file="/include/tags.jspf"%> --%>
 
 <!DOCTYPE html>
 <html>
@@ -11,8 +11,8 @@
 	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="/resources/css/intro.css">
 <script src="/resources/js/juqery-2.2.0.min.js"></script>
-<!-- <script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+ <script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="/resources/js/vide.min.js"></script>
 
 <style>
@@ -32,7 +32,7 @@
 
 		<div id="signUp">Sign Up</div>
 		<!-- <div id="login">Login</div> -->
-		 <div id="story"><a href="#">story</a></div> 
+		 <div id="story"><a href="/post">story</a></div> 
 		<div class="SignUp-box animated fadeInUp">
 			<div class="headerbox">Register</div>
 			<div class="SignUpForm">

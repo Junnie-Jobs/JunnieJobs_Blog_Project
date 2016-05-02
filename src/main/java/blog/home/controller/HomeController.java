@@ -11,4 +11,9 @@ public class HomeController {
 	public String home() throws Exception {
 		return "index";
 	}
+	
+	@RequestMapping(value = "/post", method = RequestMethod.GET)
+	public String post() throws Exception {
+		return "post";
+	}
 }
