@@ -14,28 +14,35 @@
  <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="/resources/js/vide.min.js"></script>
-
 <style>
 </style>
 
 </head>
 <body class="video" data-vide-bg="/resources/video/nightsky.mp4">
 
-
-	<div class="headerText">
-		이상적인 여행사가 존재한다면 <br /> 
-		우리에게 어디를 가고 싶으냐가 아니라 <br /> 
-		어떤 삶의 변화가 필요하느냐고 물어볼 것이다. <br />
-	</div>
-
 	<div class="background">
+		<div class="intro_wrapper">
+			<div class="headerText">
+					이상적인 여행사가 존재한다면 <br /> 
+					우리에게 어디를 가고 싶으냐가 아니라 <br /> 
+					어떤 삶의 변화가 필요하느냐고 물어볼 것이다. <br />
+			</div>
+				<div class="btn_area">
+					<div id="signUp">Sign Up</div>
+					<!-- <div id="login">Login</div> -->
+					 <div id="story"><a href="/post">story</a>
+				 </div> 
+			</div>
 
-		<div id="signUp">Sign Up</div>
-		<!-- <div id="login">Login</div> -->
-		 <div id="story"><a href="/post">story</a></div> 
+		
 		<div class="SignUp-box animated fadeInUp">
 			<div class="headerbox">Register</div>
-			<div class="SignUpForm">
+			<div onclick="facebooklogin()" class="facebook_login_btn"> 
+			facebook login 
+    
+		</div>  
+			
+		<!-- 	<div class="SignUpForm">
 				<form autocomplete="off" class="form" action="/users/save"
 					method="post">
 					<label for="userId">Username</label> <br /> <input
@@ -46,7 +53,7 @@
 					<button type="submit">Sign Up</button>
 					<br />
 				</form>
-			</div>
+			</div> -->
 		</div>
 
 
@@ -65,16 +72,48 @@
 			</div>
 		</div>
 
+
+		</div>
+
+			
+	
+
 	</div>
 	</div>
+	
+	<script type="text/javascript">  
+//페이스북 SDK 초기화   
+window.fbAsyncInit = function() {  
+    FB.init({appId: '1019536518137994', status: true, cookie: true,xfbml: true});      
+};  
+      
+(function(d){  
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];  
+   if (d.getElementById(id)) {return;}  
+   js = d.createElement('script'); js.id = id; js.async = true;  
+   js.src = "//connect.facebook.net/en_US/all.js";  
+   ref.parentNode.insertBefore(js, ref);  
+ }(document));     
+              
+function facebooklogin() {  
+    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
+        FB.login(function(response) {  
+            var fbname;  
+            var accessToken = response.authResponse.accessToken;  
+        }, {scope: 'publish_stream,user_likes'});  
+}  
+</script>  
+
+
+	
 	<script type="text/javascript">
 		$(function() {
 			$("#signUp").on("click", function() {
 				$('.SignUp-box').fadeIn(1000).css('display', 'block');
-
 				$(".headerText").hide();
 				$("#signUp").hide();
 				$("#login").hide();
+				$("#story").hide();
 			});
 
 			$("#login").on("click", function() {

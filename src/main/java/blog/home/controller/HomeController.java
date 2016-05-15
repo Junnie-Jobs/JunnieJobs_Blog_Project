@@ -16,4 +16,9 @@ public class HomeController {
 	public String post() throws Exception {
 		return "post";
 	}
+	
+	@RequestMapping(value = "/loginPages", method = RequestMethod.GET)
+	public String loginPages() throws Exception {
+		return "loginPages";
+	}
 }
