@@ -21,4 +21,9 @@ public class HomeController {
 	public String loginPages() throws Exception {
 		return "loginPages";
 	}
+	
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
+	public String write() throws Exception {
+		return "write";
+	}
 }

@@ -111,7 +111,7 @@
 						<ul>
 							<li><a href="#intro">Intro</a></li>
 							<li><a href="#one">Story</a></li>
-							<li><a href="#two">Map</a></li>
+							<li><a href="/write">글쓰기</a></li>
 
 						</ul>
 					</nav>
