@@ -9,7 +9,7 @@
 <title>Travel DB</title>
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700'
 	rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="/resources/css/intro.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/index.css">
 <script src="/resources/js/juqery-2.2.0.min.js"></script>
  <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -20,6 +20,8 @@
 </head>
 <body class="video" data-vide-bg="/resources/video/nightsky.mp4">
 
+
+
 	<div class="background">
 		<div class="intro_wrapper">
 			<div class="headerText">
@@ -27,112 +29,127 @@
 					우리에게 어디를 가고 싶으냐가 아니라 <br /> 
 					어떤 삶의 변화가 필요하느냐고 물어볼 것이다. <br />
 			</div>
-				<div class="btn_area">
-					<div id="signUp">Sign Up</div>
-					<!-- <div id="login">Login</div> -->
-					 <div id="story"><a href="/post">story</a>
-				 </div> 
+
+			<div class="btn_area">
+				<div id="login">Login</div>
+				 <div id="story">Story</div> 
 			</div>
 
 		
-		<div class="SignUp-box animated fadeInUp">
-			<div class="headerbox">Register</div>
-			<div onclick="facebooklogin()" class="facebook_login_btn"> 
-			facebook login 
-    
-		</div>  
+			<div class="login_box animated fadeInUp">
+				<div class="headerbox">Login</div>
+
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true" onlogin="checkLoginState()"></div>
+
+
+    <!--       <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="facebook_login_btn">
+          </fb:login-button> -->
+
+         
+
+          <div class="facebook_login">페이스북으로 로그인</div>
+          <div class="twitter_login">트위터로 로그인</div>
+          <div class="naver_login">네이버로 로그인</div>
 			
-		<!-- 	<div class="SignUpForm">
-				<form autocomplete="off" class="form" action="/users/save"
-					method="post">
-					<label for="userId">Username</label> <br /> <input
-						autocomplete="off" type="text" id="userId" name="userId">
-					<br /> <label for="password">Password</label> <br /> <input
-						autocomplete="off" type="password" id="password" name="password">
-					<br />
-					<button type="submit">Sign Up</button>
-					<br />
-				</form>
-			</div> -->
-		</div>
-
-
-		<div class="login-box animated fadeInUp">
-			<div class="headerbox">Login</div>
-			<div class="loginForm">
-				<form class="form" action="/users/login" method="post"
-					autocomplete="off">
-					<label for="username">Username</label> <br /> <input type="text"
-						id="userId" name="userId" autocomplete="off"> <br /> <label
-						for="password">Password</label> <br /> <input type="password"
-						id="password" name="password" autocomplete="off"> <br />
-					<button type="submit">Login</button>
-					<br />
-				</form>
+			<!-- 	<div id="status"></div> -->			
 			</div>
-		</div>
 
 
 		</div>
-
-			
-	
-
 	</div>
 	</div>
+
+  
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6&appId=260091451012404";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 	
-	<script type="text/javascript">  
-//페이스북 SDK 초기화   
-window.fbAsyncInit = function() {  
-    FB.init({appId: '1019536518137994', status: true, cookie: true,xfbml: true});      
-};  
-      
-(function(d){  
-   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];  
-   if (d.getElementById(id)) {return;}  
-   js = d.createElement('script'); js.id = id; js.async = true;  
-   js.src = "//connect.facebook.net/en_US/all.js";  
-   ref.parentNode.insertBefore(js, ref);  
- }(document));     
-              
-function facebooklogin() {  
-    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
-        FB.login(function(response) {  
-            var fbname;  
-            var accessToken = response.authResponse.accessToken;  
-        }, {scope: 'publish_stream,user_likes'});  
-}  
-</script>  
+	<script language="javascript" src="http://connect.facebook.net/ko_KR/all.js"></script>
+	<script src="/resources/js/index.js"></script>
 
+	<script>
+		// This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // response 객체는 현재 로그인 상태를 나타내는 정보를 보여준다. 
+    // 앱에서 현재의 로그인 상태에 따라 동작하면 된다.
+    // FB.getLoginStatus().의 레퍼런스에서 더 자세한 내용이 참조 가능하다.
+    if (response.status === 'connected') {
+      // 페이스북을 통해서 로그인이 되어있다.
+      console.log("페이스북을 통해 로그인 되어있다.");
+       // window.location.href = ("/post");
+    } else if (response.status === 'not_authorized') {
+      // 페이스북에는 로그인 했으나, 앱에는 로그인이 되어있지 않다.
+      // document.getElementById('status').innerHTML = 'Please log ' +
+      //   'into this app.';
+        console.log("페이스북에는 로그인 되어있지만, 앱에는 로그인 되어있지 않음");
+    } else {
+      // 페이스북에 로그인이 되어있지 않다. 따라서, 앱에 로그인이 되어있는지 여부가 불확실하다.
+      // document.getElementById('status').innerHTML = 'Please log ' +
+      //   'into Facebook.';
+        console.log("페이스북에 로그인이 되어있지 않다. 따라서, 앱에 로그인이 되어있는지 여부가 불확실하다.");
+    }
+  }
 
-	
-	<script type="text/javascript">
-		$(function() {
-			$("#signUp").on("click", function() {
-				$('.SignUp-box').fadeIn(1000).css('display', 'block');
-				$(".headerText").hide();
-				$("#signUp").hide();
-				$("#login").hide();
-				$("#story").hide();
-			});
+  // 이 함수는 누군가가 로그인 버튼에 대한 처리가 끝났을 때 호출된다.
+  // onlogin 핸들러를 아래와 같이 첨부하면 된다.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
 
-			$("#login").on("click", function() {
-				$('.login-box').fadeIn(1000).css('display', 'block');
-				$(".headerText").hide();
-				$("#signUp").hide();
-				$("#login").hide();
-			});
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '260091451012404',
+    cookie     : true,  // 쿠키가 세션을 참조할 수 있도록 허용
+    xfbml      : true,  // 소셜 플러그인이 있으면 처리
+    version    : 'v2.1' // 버전 2.1 사용
+  });
 
-			/* $("#logout").on("click", function() {
-				$('.login-box').fadeIn(1000).css('display', 'block');
-			}); */
+  // 자바스크립트 SDK를 초기화 했으니, FB.getLoginStatus()를 호출한다.
+  //.이 함수는 이 페이지의 사용자가 현재 로그인 되어있는 상태 3가지 중 하나를 콜백에 리턴한다.
+  // 그 3가지 상태는 아래와 같다.
+  // 1. 앱과 페이스북에 로그인 되어있다. ('connected')
+  // 2. 페이스북에 로그인되어있으나, 앱에는 로그인이 되어있지 않다. ('not_authorized')
+  // 3. 페이스북에 로그인이 되어있지 않아서 앱에 로그인이 되었는지 불확실하다.
+  //
+  // 위에서 구현한 콜백 함수는 이 3가지를 다루도록 되어있다.
 
-			$('#logo').addClass('animated fadeInDown');
-			$("input:text:visible:first").focus();
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
 
-			$('input').attr('autocomplete', 'off');
-		});
+  };
+
+  // SDK를 비동기적으로 호출
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // 로그인이 성공한 다음에는 간단한 그래프API를 호출한다.
+  // 이 호출은 statusChangeCallback()에서 이루어진다.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
 	</script>
+	
 
 </body>
 </html>

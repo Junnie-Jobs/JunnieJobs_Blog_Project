@@ -14,7 +14,7 @@
 
 
 
-#signUp, #logout {
+#signUp, #story {
 	border: 1px solid;
 	border-color: rgba(255, 255, 255, 0.6);
 	border-radius: 18px;
@@ -27,10 +27,15 @@
 	cursor:pointer;
 	display: inline-block;
 	margin-left: 95px;
+	text-decoration: none;
 
 }
 
-	#signUp:hover, #logout:hover{
+#story a{
+	
+}
+
+	#signUp:hover, #story:hover{
 		background-color:rgba(255,255,255,0.3);
 		color:rgba(0,0,0,1);
 		border:none;
