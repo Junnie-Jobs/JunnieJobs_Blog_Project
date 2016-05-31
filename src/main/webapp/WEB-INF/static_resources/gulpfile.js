@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 
- var src = './';
+var src = './';
 var dist = './dist';
 
 var paths = {

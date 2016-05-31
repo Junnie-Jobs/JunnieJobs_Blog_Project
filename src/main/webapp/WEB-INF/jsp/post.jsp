@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="blog.model.User"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -11,92 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="/resources/css/post.css">
 	<link rel="stylesheet" type="text/css" href="/resources/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/resources/css/font-awesome.min.css">
-		<style>
-			#aboutimg {
-				position: absolute;
-				top: 20px;
-				left: -10px;
-				right: 0;
-				margin: auto;
-				width: 100px;
-				height: 100px;
-				}
-
-				#a, #b {
-				  box-sizing: border-box;
-				  padding: 0px;
-				  margin:0;
-				  display: inline-block;
-				  width: 49.7%;
-				  height: 100%;
-				  vertical-align: top;
-				  box-sizing:border-box;
-				}
-
-				#a {
-					  background: white;
-					  box-sizing:border-box;
-					  margin-left: -0.3%;
-					  padding:70px;
-					}
-
-				#a .firstImage{
-					width: 100%;
-					height: 300px;
-/*					border:1px solid black;*/
-					margin: 0 auto 0 auto;
-					background-image: url("/resources/images/profileBook.jpg");
-					background-size: 100% 100%;
-
-				}
-
-				#a .firstImageExplain{
-					width: 100%;
-					height: 100px;
-				/*	border:1px solid black;*/
-					margin: 30px auto 0 auto;
-					color: black;
-					text-align: center;
-					/*line-height: 100px;*/
-
-
-				}
-
-				#b {
-				  width: 50%;
-				  padding:70px;
-				  text-align: justify;
-				  background: honeydew;
-				  overflow-y: auto;
-				  overflow-x: hidden;
-				  color:black;
-				  box-sizing:border-box;
-				  scroll:hidden;
-				}
-
-				#two .style2_right{
-					width: 500px;
-					height: 300px;
-					background-color: black;
-
-				}
-				
-			/* 	.answerWrite .pull-right{
-					
-					width: 100px;
-					height: 30px;
-					text-align:center;
-				
-				} */
-				
-				.submit_button{
-				
-					width: 100px;
-					height: 30px;
-					border:1px solid black;
-				}
-
-		</style>
 	</head>
 	<body>
 
@@ -109,9 +24,10 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro">Intro</a></li>
-							<li><a href="#one">Story</a></li>
-							<li><a href="/write">글쓰기</a></li>
+							 <li class="list-group-item userId">${sessionScope.user.name}</li>
+							<li><a href="/post">Intro</a></li>
+							<li><a href="/write/postBook">Story</a></li>
+							<li class="write"><a href="/write/new">write</a></li>
 
 						</ul>
 					</nav>
@@ -132,7 +48,7 @@
 
 		<!-- One -->
 			<section id="one" class="main style2 right dark fullscreen">
-				<img src="/resources/images/profile.png" alt="about" id="aboutimg">
+
 				<div id="a">
 					<div class="firstImage"></div>
 					<div class="firstImageExplain">
@@ -257,6 +173,7 @@
 			<script src="/resources/js/skel.min.js"></script>
 			<script src="/resources/js/util.js"></script>
 			<script src="/resources/js/main.js"></script>
+			<script src="/resources/js/post.js">
 
 	</body>
 </html>

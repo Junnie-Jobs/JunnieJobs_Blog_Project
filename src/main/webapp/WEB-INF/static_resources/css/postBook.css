@@ -1,0 +1,43 @@
+
+
+#header ul{
+	list-style: none;
+	font-size: 100%;
+	font:inherit;
+	vertical-align: baseline;
+}
+
+#header #nav ul li{
+	display: inline-block;
+	margin-left: 0.5em;
+	font-size: 0.9em;
+}
+
+.postBook_wrapper{
+
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+
+.postBook_wrapper .postBook{
+	width: 100%;
+	height: 500px;
+	list-style: none;
+}
+
+.postBook_wrapper .postBook .post{
+	width: 200px;
+	float: left;
+	margin-left: 37px;
+}
+
+.postBook_wrapper .postBook .post .card{
+	height: 240px;
+}
+
+.postBook_wrapper .postBook .post .card .card-action{
+	height: 10px;
+	line-height: 10px;
+	display: none;
+}

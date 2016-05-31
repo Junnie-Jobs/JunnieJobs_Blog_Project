@@ -66,6 +66,11 @@
 
 }
 
+.headerText:hover{
+	background-color: white;
+	color: black;
+}
+
 .intro_wrapper .btn_area{
 
 	width: 60%;

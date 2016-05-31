@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -137,8 +137,8 @@
 		location.href=url;
 	}
 	// 등록 폼 체크
-	function boardWriteCheck() {
-		var form = document.boardWriteForm;
+	function postWriteCheck() {
+		var form = document.postWriteForm;
 		if (form.subject.value == '') {
 			alert('제목을 입력하세요.');
 			form.subject.focus();
@@ -184,47 +184,44 @@
 
 </head>
 <body>
-	<form name="boardWriteForm" action="/board/boardProcess.jsp" method="post" onsubmit="return boardWriteCheck();">
-	<div class="buttons">
-		<input type="button" value="목록" onclick="goUrl('boardList.jsp');" />
-		<input type="submit" value="글쓰기" />
-	</div>
-	<div class="line"></div>
-	<input type="hidden" name="mode" value="W" />
-	<table summary="게시판 등록 폼">
-	
-	
-	<div class="header">
-		<input type="text" name="subject" size="80" maxlength="100" placeholder="제목을 입력해주세요" autocomplete="off"/>
-	</div>
-	<div class="writer"><input type="text" name="writer" maxlength="20" placeholder="작성자" autocomplete="off" /></div>	
-	<div class="line"></div>	
 
-				<div class="writeArea">
-					<textarea id="contents" name="contents" cols="150" rows="30"></textarea>
-					
-					<script>
-					CKEDITOR.replace('contents',{
-					filebrowserUploadUrl: '/imageUpload', 
-					customConfig: '/resources/ckeditor/ckwriter.js',
-				    skin:'minimalist',
-				    width:'100%',
-		            height:'500px',
+	<form:form name="post" modelAttribute="post" action="/write/postProcess" method="post" onsubmit="return postWriteCheck();">
+		<div class="buttons">
+			<input type="button" value="목록" onclick="goUrl('/post');" />
+			<input type="submit" value="저장하기" />
+		</div>
+		<div class="line"></div>
+		<input type="hidden" name="mode" value="W" />
+		<table summary="게시판 등록 폼">
+		
+	
+		<div class="header">
+			<form:input path="title" cssClass="title" size="80" maxlength="100" placeholder="제목을 입력해주세요" autocomplete="off"/>
+		</div>
+
+		<div class="line"></div>	
+
+		<div class="writeArea">
+			<form:textarea path="contents" cssClass="writeContents" cols="150" rows="30" />			
+				<script>
+				CKEDITOR.replace('contents',{
+				filebrowserUploadUrl: '/imageUpload', 
+				customConfig: '/resources/ckeditor/ckwriter.js',
+			    skin:'minimalist',
+			    width:'100%',
+	            height:'500px',});
+				</script>
+		</div>
 						
-					});
-					</script>
-					</div>
-					
+	</form:form>
 
-	
-	</form>
 <!-- 	<script type="text/javascript">
 //<![CDATA[
 CKEDITOR.replace( 'editor1',{
 uiColor: '#14B8C4'
 });
-//]]> -->
-</script>
+//]]> </script>-->
+
 
 <!-- <script type="text/JavaScript">
  

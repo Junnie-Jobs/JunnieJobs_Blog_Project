@@ -20,11 +20,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import core.web.argumentresolver.LoginUserHandlerMethodArgumentResolver;
+
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "blog" })
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
+	private static final int CACHE_PERIOD = 31556926; // one year
 
 	@Bean
 	public ViewResolver viewResolver() {
@@ -37,13 +40,15 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/static_resources/");
+		registry.addResourceHandler("/resources/**")
+		.addResourceLocations("/WEB-INF/static_resources/")
+		.setCachePeriod(CACHE_PERIOD);
 	}
 
-//	@Override
-//	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-//		argumentResolvers.add(new LoginUserHandlerMethodArgumentResolver());
-//	}
+	@Override
+	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+		argumentResolvers.add(new LoginUserHandlerMethodArgumentResolver());
+	}
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
