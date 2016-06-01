@@ -81,25 +81,10 @@
 
             console.log(file);
             console.log(index);
-            $(".main_photo_wrapper").css('background-image', 'url('+baseURL+'/images/upload/'+file.url+')');
-    
-   
-             $(".defualt_message").css('color','rgba(255,255,255,0)');
-       		$(".defualt_message").css('display','none');
-       		$(".main_cover_uploader").css('display', 'none');
-       		$(".main_photo_wrapper .header_text").css('display','block');
+            $(".left_page_img").css('background-image', 'url('+baseURL+'/images/upload/'+file.url+')');
+       		$(".second_page_uploader").css('display','none');s
 
-            var item = $('<li class="collection-item"/>');
-            // $('<img/>').attr('src', file.thumbnailUrl).appendTo(item);
-            // // $('<span/>').text(file.name).appendTo(item);
-            // $('<div class="input-field col s12">' +
-            //   `<input id="captions[${index}]" name="captions[]" type="text" required>` +
-            //   `<label for="captions[${index}]">${file.name} 캡션</label>` +
-            //   '</div>').appendTo(item);
-            // item.appendTo('#files');
           });
-
-          // $("#media").html(JSON.stringify(data.result.files));
         },
         progressall: function (e, data) {
           var progress = parseInt(data.loaded / data.total * 100, 10);
@@ -203,7 +188,7 @@
 		<div class="second_page">
 			<div class="left_page">
 				<div class="left_page_img z-depth-1">
-	 				<div class="file-field input-field">
+	 				<div class="file-field input-field second_page_uploader">
 					      <div class="btn">
 					       		 <span>File</span>
 					       		 <input id="fileupload2" type="file" name="files[]" multiple>
