@@ -1,5 +1,8 @@
 package blog.controller.post;
 
+import java.util.Date;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import blog.model.Post;
 import blog.model.User;
 import blog.service.PostService;
 import core.web.argumentresolver.LoginUser;
+
 
 @Controller
 @RequestMapping("/write")
@@ -44,14 +48,49 @@ public class PostController {
 		return "post/fileUploadTest";
 	}
 
+//	@RequestMapping(value = "/postProcess", method = RequestMethod.POST)
+//	public String postProcess(@LoginUser User loginUser, Post post) throws Exception {
+//		if (loginUser.isGuestUser()) {
+//			return "redirect:/post";
+//		}
+//		log.debug("loginUser : " + loginUser);
+//		postDao.insert(post.newPost(loginUser));
+//		return "post";
+//	}
+
+	
 	@RequestMapping(value = "/postProcess", method = RequestMethod.POST)
-	public String postProcess(@LoginUser User loginUser, Post post) throws Exception {
-		if (loginUser.isGuestUser()) {
-			return "redirect:/post";
-		}
+	public String postProcess(@LoginUser User loginUser, 
+								String title,						
+								String first_page_image_url,
+								String second_page_image_url,
+								String second_page_short_text,
+								String second_page_long_text,
+								String third_page_thumb1_image_url, 
+								String third_page_thumb2_image_url, 
+								String third_page_thumb3_image_url, 
+								String third_page_thumb4_image_url, 
+								String third_page_thumb5_image_url, 
+								String third_page_thumb6_image_url) throws Exception {
+
 		log.debug("loginUser : " + loginUser);
-		postDao.insert(post.newPost(loginUser));
-		return "post";
+		
+		
+		Post post = new Post(
+				loginUser.getUserId(), 
+				title, first_page_image_url, 
+				second_page_image_url, 
+				second_page_short_text, 
+				second_page_long_text,
+				third_page_thumb1_image_url, 
+				third_page_thumb2_image_url, 
+				third_page_thumb3_image_url, 
+				third_page_thumb4_image_url, 
+				third_page_thumb5_image_url, 
+				third_page_thumb6_image_url);
+		
+		postDao.insert(post);
+		return "post/postBook";
 	}
 	
 	@RequestMapping(value = "/postTest", method = RequestMethod.POST)
@@ -76,5 +115,15 @@ public class PostController {
 		return "/post/show";
 
 	}
+	
+//	@RequestMapping(value = "/postBook/{postId}", method = RequestMethod.GET)
+//	public String showPost(@PathVariable long postId, Model model) throws Exception {
+//		model.addAttribute("post", postService.findById(postId));
+//		model.addAttribute("comment", postService.findAllByPostId(postId));
+//		return "/post/show";
+//
+//	}
+	
+
 
 }

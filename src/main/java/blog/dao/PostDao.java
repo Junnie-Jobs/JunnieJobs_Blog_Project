@@ -33,15 +33,15 @@ public class PostDao {
         String sql = "INSERT INTO posts (writer, title, createdDate, "
         		+ "first_page_image_url, "
         		+ "second_page_image_url, "
-        		+ "second_page_short_text"
-        		+ "second_page_long_text"
-        		+ "third_page_thumb1_image_url"
-        		+ "third_page_thumb2_image_url"
-        		+ "third_page_thumb3_image_url"
-        		+ "third_page_thumb4_image_url"
-        		+ "third_page_thumb5_image_url"
+        		+ "second_page_short_text, "
+        		+ "second_page_long_text, "
+        		+ "third_page_thumb1_image_url, "
+        		+ "third_page_thumb2_image_url, "
+        		+ "third_page_thumb3_image_url, "
+        		+ "third_page_thumb4_image_url, "
+        		+ "third_page_thumb5_image_url, "
         		+ "third_page_thumb6_image_url"
-        		+ ") VALUES (?, ?, ?, ?, ?)";
+        		+ ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         PreparedStatementCreator psc = new PreparedStatementCreator() {
 			@Override
@@ -82,7 +82,7 @@ public class PostDao {
     }
 	
 	public List<Post> findAll() {
-		String sql = "SELECT postId, writer, title, createdDate, countOfAnswer, "
+		String sql = "SELECT postId, writer, title, createdDate, countOfComment, "
 				+ "first_page_image_url "
 				+ "FROM posts "
 				+ "order by postId desc";
@@ -94,7 +94,7 @@ public class PostDao {
 						rs.getString("writer"), 
 						rs.getString("title"), 
 						rs.getTimestamp("createdDate"),
-						rs.getInt("countOfAnswer"),
+						rs.getInt("countOfComment"),
 						rs.getString("first_page_image_url")
 						);
 			}
@@ -114,7 +114,7 @@ public class PostDao {
 						rs.getString("writer"), 
 						rs.getString("title"),
 						rs.getTimestamp("createdDate"),
-						rs.getInt("countOfAnswer"),
+						rs.getInt("countOfComment"),
 						rs.getString("first_page_image_url"),
 						rs.getString("second_page_image_url"),
 						rs.getString("second_page_short_text"),
@@ -145,8 +145,8 @@ public class PostDao {
 		jdbcTemplate.update(sql, postId);
 	}
 
-	public void updateCountOfAnswer(long postId) {
-		String sql = "UPDATE posts set countOfAnswer = countOfAnswer + 1 WHERE postId = ?";
+	public void updatecountOfComment(long postId) {
+		String sql = "UPDATE posts set countOfComment = countOfComment + 1 WHERE postId = ?";
 		jdbcTemplate.update(sql, postId);
 	}
 	

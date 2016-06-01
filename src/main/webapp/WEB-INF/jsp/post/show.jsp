@@ -10,11 +10,22 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="/resources/css/show.css">
-	<link rel="stylesheet" type="text/css" href="/resources/css/styles.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="/resources/css/styles.css"> -->
 	<link rel="stylesheet" type="text/css" href="/resources/css/font-awesome.min.css">
 	 
 	</head>
 	<body>
+
+ <input name="first_page_image_url" type="hidden" value='${post.first_page_image_url}'>
+ <input name="second_page_image_url" type="hidden" value='${post.second_page_image_url}'>
+
+ <input name="third_page_thumb1_image_url" type="hidden" value='${post.third_page_thumb1_image_url}'>
+ <input name="third_page_thumb2_image_url" type="hidden" value='${post.third_page_thumb2_image_url}'>
+ <input name="third_page_thumb3_image_url" type="hidden" value='${post.third_page_thumb3_image_url}'>
+ <input name="third_page_thumb4_image_url" type="hidden" value='${post.third_page_thumb4_image_url}'>
+ <input name="third_page_thumb5_image_url" type="hidden" value='${post.third_page_thumb5_image_url}'>
+ <input name="third_page_thumb6_image_url" type="hidden" value='${post.third_page_thumb6_image_url}'>
+
 
 		<!-- Header -->
 			<header id="header">
@@ -39,9 +50,8 @@
             <div class="alert alert-danger" role="alert">${errorMessage}</div>
         </c:if>		
 
-
 		<!-- First Page -->
-			<section id="intro" class="main style1 dark fullscreen" style="background: url("${post.first_page_image_url}"); ">
+			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content container 75%">
 					<header>
 						<h2>${post.title}</h2>
@@ -57,8 +67,7 @@
 			<!-- Second Page -->
 			<section id="one" class="main style2 right dark fullscreen">
 				<div id="a">
-					<div class="firstImage">
-						<img src="${post.second_page_image_url}">
+					<div class="firstImage z-depth-2">
 					</div>
 					<div class="firstImageExplain">
 						${post.second_page_short_text}
@@ -80,31 +89,30 @@
 						<div class="container 75% gallery">
 
 							<div class="row 0% images">
-								<div class="6u 12u(mobile)">
-									<a href="${post.third_page_thumb1_image_url}" class="image fit from-left"><img src="${post.third_page_thumb1_image_url}" title="The Anonymous Red" alt="" /></a>
+								<div class="6u 12u(mobile) thumb thumb1_block">									
 								</div>
 
-								<div class="6u 12u(mobile)">
-									<a href="${post.third_page_thumb2_image_url}" class="image fit from-right"><img src="${post.third_page_thumb2_image_url}" alt="" /></a>
+								<div class="6u 12u(mobile) thumb thumb2_block">
+								
 								</div>
 							</div>
 
 							<div class="row 0% images">
-								<div class="6u 12u(mobile)">
-									<a href="${post.third_page_thumb3_image_url}" class="image fit from-left"><img src="${post.third_page_thumb3_image_url}" title="Air Lounge" alt="" /></a>
+								<div class="6u 12u(mobile) thumb thumb3_block">
+							
 								</div>
 
-								<div class="6u 12u(mobile)">
-									<a href="${post.third_page_thumb4_image_url}" class="image fit from-right"><img src="${post.third_page_thumb4_image_url}" title="Carry on" alt="" /></a>
+								<div class="6u 12u(mobile) thumb thumb4_block">
+									
 								</div>
 							</div>
 
 							<div class="row 0% images">
-								<div class="6u 12u(mobile)">
-									<a href="${post.third_page_thumb5_image_url}" class="image fit from-left"><img src="${post.third_page_thumb5_image_url}" title="The sparkling shell" alt="" /></a>
+								<div class="6u 12u(mobile) thumb thumb5_block">
+								
 								</div>
-								<div class="6u 12u(mobile)">
-									<a href="${post.third_page_thumb6_image_url}" class="image fit from-right"><img src="${post.third_page_thumb6_image_url}" title="Bent IX" alt="" /></a>
+								<div class="6u 12u(mobile) thumb thumb6_block">
+								
 								</div>
 							</div>
 						</div>
@@ -149,7 +157,7 @@
 			
 					<div class="comment_write_area">
 							<textarea name="contents" class="comment_input" placeholder="글쓴이에게 말을 걸어주세요"></textarea>
-							<button class="answer">댓글</button>
+							<button class="comment">댓글</button>
 					</div>
 			
 				

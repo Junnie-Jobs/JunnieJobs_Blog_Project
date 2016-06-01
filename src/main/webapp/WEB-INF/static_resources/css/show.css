@@ -1,6 +1,10 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 @import url("/resources/css/font-awesome.min.css");
 
+body{
+	background-color: rgba(255,255,255,0);
+}
+
 	#aboutimg {
 				position: absolute;
 				top: 20px;
@@ -27,6 +31,7 @@
 					  box-sizing:border-box;
 					  margin-left: -0.3%;
 					  padding:70px;
+					/*  background-color: rgba(250,241,199,1);*/
 					}
 
 			#a .firstImage{
@@ -35,7 +40,7 @@
 /*					border:1px solid black;*/
 					margin: 0 auto 0 auto;
 					/*background-image: url("/resources/images/profileBook.jpg");*/
-					/*background-size: auto 100%;*/
+					background-size: auto 100%;
 
 				}
 
@@ -50,6 +55,7 @@
 					margin: 30px auto 0 auto;
 					color: black;
 					text-align: center;
+					font-size: 16px;
 					/*line-height: 100px;*/
 
 
@@ -59,7 +65,7 @@
 				  width: 50%;
 				  padding:70px;
 				  text-align: justify;
-				  background: honeydew;
+				/*  background-color: rgba(250,241,199,1);*/
 				  overflow-y: auto;
 				  overflow-x: hidden;
 				  color:black;
@@ -73,6 +79,13 @@
 					background-color: black;
 
 				}
+
+				#work .content .container .images .thumb img{
+
+					width: 100%;
+					height: 100%;
+				}
+				
 				
 		/* 	.answerWrite .pull-right{
 					
@@ -1973,7 +1986,7 @@
 	}
 
 	body {
-		background: #fff;
+	/*	background: #fff;*/
 		height: 100%;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
@@ -3028,9 +3041,8 @@
 				}
 
 /* Intro */
-/*url("/resources//images/P1240294.jpg")*/
+
 	#intro {
-		/*background: url("/resources/images/15.JPG");*/
 		background-size: 100% 100%, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -3040,14 +3052,9 @@
 /* One */
 
 	#one {
-		/*background: url("images/overlay.png"), url("../../images/one.jpg");
-		background-size: 256px 256px, cover;
-		background-attachment: fixed, fixed;
-		background-position: top left, center center;*/
 
 		width: 100%;
 		height: 100%;
-		background-color: white;
 		padding:0;
 		margin: 0;
 		box-sizing:border-box;

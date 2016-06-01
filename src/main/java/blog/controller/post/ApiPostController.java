@@ -56,7 +56,7 @@ public class ApiPostController {
 		Map<String, Object> values = Maps.newHashMap();
 		Comment comment = new Comment(loginUser.getUserId(), contents, postId);
 		Comment savedComment = commentDao.insert(comment);
-		postDao.updateCountOfAnswer(savedComment.getPostId());
+		postDao.updatecountOfComment(savedComment.getPostId());
 		values.put("comment", savedComment);
 		values.put("result", Result.ok());
 		System.out.println(values);
