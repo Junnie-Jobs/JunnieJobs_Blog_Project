@@ -41,6 +41,7 @@ body{
 					margin: 0 auto 0 auto;
 					/*background-image: url("/resources/images/profileBook.jpg");*/
 					background-size: auto 100%;
+					box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 				}
 
@@ -64,13 +65,16 @@ body{
 			#b {
 				  width: 50%;
 				  padding:70px;
-				  text-align: justify;
+				/*  text-align: justify;*/
 				/*  background-color: rgba(250,241,199,1);*/
 				  overflow-y: auto;
 				  overflow-x: hidden;
 				  color:black;
 				  box-sizing:border-box;
 				  scroll:hidden;
+				  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				
+
 				}
 
 			#two .style2_right{
@@ -182,15 +186,38 @@ body{
 				margin-top: 20px;
 
 			}
+			#comments .comment_write_area .empty_space{
+				width: 90%;
+				height: 30px;
+			/*	border:1px solid black;*/
+				margin: 0 auto;
+			}
 
 			#comments button{
 				float: right;
 				margin-top: 1%;
 				margin-right: 5%;
-				border-radius: 20px;
-				border:none;
+				width:75px;
+				height: 35px;
+				line-height: 25px;
+				background-color:rgba(255,255,255,0);
+				border-radius:20px;
+				transition-duration: 0.5s;
+				transition-timing-function: ease;
+				margin-left:5px;
+				margin-right:5px;
+				border:1px solid;
+				border-color:rgba(0,0,0,0.2);
+				color:rgba(0,0,0,0.5);
 			
 			}
+
+			#comments button:hover {
+		
+		outline:none;
+		background-color:rgba(0,0,0,0.1);
+	
+	}
 
 
 /* Reset */
@@ -3043,10 +3070,10 @@ body{
 /* Intro */
 
 	#intro {
-		background-size: 100% 100%, cover;
+		background-size: 100% auto;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
-		background-repeat: repeat, no-repeat;
+		background-repeat: no-repeat;
 	}
 
 /* One */

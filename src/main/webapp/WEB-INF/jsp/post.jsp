@@ -58,7 +58,52 @@
 						거친 비바람에 시달릴일도 없을 것이다.</br>
 						하지만 그것이 배의 존재이유는 아니다.</br>
 					</div>
-				</div><div id="b">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui. Ut tincidunt tortor. Donec nonummy, enim in lacinia pulvinar, velit tellus scelerisque augue, ac posuere libero urna eget neque. Cras ipsum. Vestibulum pretium, lectus nec venenatis volutpat, purus lectus ultrices risus, a condimentum risus mi et quam. Pellentesque auctor fringilla neque. Duis eu massa ut lorem iaculis vestibulum. Maecenas facilisis elit sed justo. Quisque volutpat malesuada velit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui. Ut tincidunt tortor. Donec nonummy, enim in lacinia pulvinar, velit tellus scelerisque augue, ac posuere libero urna eget neque. Cras ipsum. Vestibulum pretium, lectus nec venenatis volutpat, purus lectus ultrices risus, a condimentum risus mi et quam. Pellentesque auctor fringilla neque. Duis eu massa ut lorem iaculis vestibulum. Maecenas facilisis elit sed justo. Quisque volutpat malesuada velitLorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui. Ut tincidunt tortor. Donec nonummy, enim in lacinia pulvinar, velit tellus scelerisque augue, ac posuere libero urna eget neque. Cras ipsum. Vestibulum pretium, lectus nec venenatis volutpat, purus lectus ultrices risus, a condimentum risus mi et quam. Pellentesque auctor fringilla neque. Duis eu massa ut lorem iaculis vestibulum. Maecenas facilisis elit sed justo. Quisque volutpat malesuada velitLorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui. Ut tincidunt tortor. Donec nonummy, enim in lacinia pulvinar, velit tellus scelerisque augue, ac posuere libero urna eget neque. Cras ipsum. Vestibulum pretium, lectus nec venenatis volutpat, purus lectus ultrices risus, a condimentum risus mi et quam. Pellentesque auctor fringilla neque. Duis eu massa ut lorem iaculis vestibulum. Maecenas facilisis elit sed justo. Quisque volutpat malesuada velitLorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui. Ut tincidunt tortor. Donec nonummy, enim in lacinia pulvinar, velit tellus scelerisque augue, ac posuere libero urna eget neque. Cras ipsum. Vestibulum pretium, lectus nec venenatis volutpat, purus lectus ultrices risus, a condimentum risus mi et quam. Pellentesque auctor fringilla neque. Duis eu massa ut lorem iaculis vestibulum. Maecenas facilisis elit sed justo. Quisque volutpat malesuada velit<br><br></div>
+				</div><div id="b">
+
+
+
+ 아덴만 해역으로 나아가기 이전 우리는 한국에서의 마지막 시간을 분주히 보내고 있었다.
+다시는 돌아오지 못할 것처럼 시간을 느끼는 모두의 설렘과 걱정스런 마음을 아는지
+바다의 푸른 안색도 계속 일렁이며 밝아졌다 어두워지며 숨소리를 내쉬었다.</br></br>
+
+그리고 5월 14일 </br></br>
+
+부산을 떠나면서 흰색의 옷을 입은 우리는 가족들과 작별인사를 했다.
+항구를 떠나면서도 파도의 포말은 우리의 얼굴을 때렸고, 
+그것이 눈물처럼 느껴졌으나 
+바다의 짠내가 후각을 자극하고서야 
+마침내 그 포말이 바닷물인걸 알 수 있었다.</br></br>
+
+앞으로 189일간의 여정을 상상해보면서 항구를 보고있는 동안 
+바다와 대기 그리고 우리의 모험은 드디어 실감이 나며 내 가슴을 압박했다.
+ 앞으로 과연 어떤 모험이 우리를 마주하게 될까?</br></br>
+
+바다에서 사방이 수평선인 곳에서 하늘을 붉게 물들이는 저녁 노을은 
+하늘을 넘어 바다위에까지 길을 그리며 마치 우리를 인도하는 것 같았다. 
+그리고 노을이 나의시선을 완전히 붙잡았을 때 그 순간 나는 기시감이 들었다.</br></br>
+
+그리고 누군가 나의 정신속에서 말을 걸어오기 시작했다.
+그는 니코스 카잔차키스였다.
+ 그는 내가 가장 존경하는 나의 영웅이고, 나의 20대의 정신성을 구축했다.</br></br>
+
+그는 자신의 자서전에서 이렇게 말한다.</br></br>
+
+내 삶을 풍부하게 해준 것은 여행과 꿈이었다. 
+내 영혼에 깊은 골을 남긴 사람이 누구누구냐고 묻는다면 나는 이렇게 꼽을 것이다. 호메로스, 베르그송, 니체, 조르바...</br></br>
+
+그의 책을 번역하신 이윤기 선생님은 그의 꿈과 여행에 대해 다음과 같이 말한다.
+
+그가 <여행>이라고 부르는 것은 구체적이고 물리적인 그 자신의 <육체>, <꿈>이라고 부르는 것은 추상적이고 관념적인 그 자신의 <영혼>인 듯하다. 구체적인 체험으로서의 여행이 추상적인 꿈을 심화시키고 그 꿈이 여행의 무대를 확장시키듯이, 그의 삶이라는 것도 육체와 영혼의 상호작용을 통한 심화와 확장 과정으로 이루어진다. 여행과 꿈이 상호작용을 통하여 늘 그의 삶을 풍부하게 하듯이, 영혼과 육체는 변증법적 상호작용을 통해 그의 존재를 드높이는 것이다.</br></br>
+
+20대</br></br>
+
+뜨거움이 넘쳐 흘러 어떻게 주체해야할지 모르는 지금 이시기에 파병의 첫색깔은 
+저녁노을의 붉음이었기에 그것이 나의 시선을 붙잡았으리라.</br></br>
+
+이 파병의 경험이 나의 꿈을 더욱 심화시키고, 
+더 심화된 꿈은 어떻게 내가 바다를 넘나들며 경험하는 무대를 넓혀줄 것인지 
+그런 흥분되는 기대감에 흔들리는 배안에서도 미소를 지으며 잠들 수 있었다.
+<br><br></div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
 			
@@ -103,68 +148,36 @@
 
 
 		<!-- reply -->
-			<section id="contact" class="main style3 secondary">
-				<div class="qna-comment">
-					<div class="qna-comment-slipp">
-						<p class="qna-comment-count"><strong>${question.countOfComment}</strong>개의 의견</p>
-						<div class="qna-comment-slipp-articles">
-							<c:forEach items="${answers}" var="each">
-							<article class="article">
-								<div class="article-header">
-									<div class="article-header-thumb">
-										<img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p40x40/12122962_909412652472761_8335595914871932582_n.jpg?oh=2de53344b0cee6bf9f187eecb7e5c07c&oe=57E78312" class="article-author-thumb" alt="">
-									</div>
-									<div class="article-header-text">
-										${each.writer}
-										<div class="article-header-time"><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${each.createdDate}" /></div>
-									</div>
-								</div>
-								<div class="article-doc comment-doc">
-									<p>${each.contents}</p>
-								</div>
-								<div class="article-util">
-									<ul class="article-util-list">
-										<li>
-											<a class="link-modify-article" href="/api/questions/${question.questionId}/answers/${each.answerId}/edit">수정</a>
-										</li>
-										<li>
-											<form class="form-delete" action="/api/questions/${question.questionId}/answers/${each.answerId}">
-												<button type="submit" class="link-delete-article">삭제</button>
-											</form>
-										</li>
-									</ul>
-								</div>
-							</article>
-                            </c:forEach>
-							<div class="answerWrite">
-                            <form name="answer" action="/api/questions/${question.questionId}/answers" method="post">
-								<div class="form-group col-lg-12">
-									<textarea name="contents" id="contents" class="form-control" placeholder=""></textarea>
-								</div>
-							
-								<input class="btn btn-success pull-right sumbits" type="submit" value="댓글달기" />
-								<!-- <input class="submit_button" type="submit" value="댓글달기" /> -->
-								<div class="clearfix" />
-							</form>
+			<section id="comments" class="main style3 secondary">			
+				<c:forEach items="${comment}" var="each">
+					<div class="post_comment">
+						<div class="comment_about_this_post">
+
+							<div class="comment_user_Info">
+								<div class="comment_user_thumb"></div>	
+								<div class="comment_user_Id">${each.writer}</div>
 							</div>
+
+							<div class="comment_contents">
+									<p>${each.contents}</p>
+							</div>
+
 						</div>
 					</div>
-				</div>
+				</c:forEach>
+			
+			    <input type="hidden" name="url" value="/api/post/${post.postId}/newComment" />
+			
+					<div class="comment_write_area">
+							<textarea name="contents" class="comment_input" placeholder="글쓴이에게 말을 걸어주세요"></textarea>
+							<div class="empty_space">
+								<button class="comment">댓글</button>
+							</div>
+							
+					</div>
+			
+				
 			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-
-				<!-- Icons -->
-					<ul class="actions">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-
-			</footer>
 
 		<!-- Scripts -->
 		<script src="/resources/js/jquery.min.js"></script> 

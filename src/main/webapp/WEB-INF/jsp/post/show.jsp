@@ -18,7 +18,6 @@
 
  <input name="first_page_image_url" type="hidden" value='${post.first_page_image_url}'>
  <input name="second_page_image_url" type="hidden" value='${post.second_page_image_url}'>
-
  <input name="third_page_thumb1_image_url" type="hidden" value='${post.third_page_thumb1_image_url}'>
  <input name="third_page_thumb2_image_url" type="hidden" value='${post.third_page_thumb2_image_url}'>
  <input name="third_page_thumb3_image_url" type="hidden" value='${post.third_page_thumb3_image_url}'>
@@ -157,7 +156,10 @@
 			
 					<div class="comment_write_area">
 							<textarea name="contents" class="comment_input" placeholder="글쓴이에게 말을 걸어주세요"></textarea>
-							<button class="comment">댓글</button>
+							<div class="empty_space">
+								<button class="comment">댓글</button>
+							</div>
+							
 					</div>
 			
 				

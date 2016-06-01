@@ -10,14 +10,15 @@
 <title>Post</title>
 <head>
 <script type="text/javascript" src="/resources/ckeditor/ckeditor.js"></script>
-<link rel="stylesheet" type="text/css" href="/resources/css/materialize.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/writeForm.css">
-<link rel="stylesheet" href="/resources/ckeditor/samples/css/samples.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/materialize.css">
 <script src="/resources/js/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
 <script src="/resources/js/jquery.fileupload.js"></script>
-<script src="/resources/js/materialize.js"></script>
 <script src="/resources/js/writeForm.js"></script>
+<script src="/resources/js/materialize.js"></script>
+
 <script>
     $(function(){
          
@@ -64,21 +65,18 @@
 		<div class="defualt_message">메인 이미지를 업로드 해주세요</div>
 		<div class="header_text">
 			<input name="title" class="title" size="80" maxlength="100" placeholder="제목을 입력해주세요" autocomplete="off" />
+			<input name="first_page_image_url" type="hidden" />
 		</div>
 		<div class="photo_uploader main_cover_uploader">
-
 			    <div class="file-field input-field">
-			      <div class="btn">
-			        <span>File</span>
-			         <input type="file" id="fileupload" name="files[]" multiple /> 
-
-			      <!-- 	<form:input path="first_page_image_url" type="file" name="files[]" id="fileupload"/> -->
-			     <input name="first_page_image_url" type="hidden" /> 
-			      </div>
-			      <div class="file-path-wrapper">
-			        <input class="file-path validate" type="text" placeholder="Upload one or more files" />
-			      </div>
-			    </div>
+				      <div class="btn grey lighten-5">
+				        <span>File</span>
+				        <input type="file" id="fileupload" name="files[]">
+				      </div>
+				      <div class="file-path-wrapper">
+				        <input class="file-path validate" type="text">
+				      </div>
+    			</div>
 		</div>
 	</div>
 </div>
@@ -89,16 +87,18 @@
 		<div class="second_page">
 			<div class="left_page">
 				<div class="left_page_img z-depth-2">
-	 				<div class="file-field input-field btn_field second_page_uploader">
-					      <div class="btn">
-					       		 <span>File</span>
-					       		 <input id="fileupload2" type="file" name="files[]" />
-					       		  <input name="second_page_image_url" type="hidden" />
-					      </div>
-					       <div class="file-path-wrapper">
-					       		 <input path="" id="file-path validate" type="text" placeholder="핵심이 되는 사진 1장을 업로드 해주세요" />
-					      </div>  
-					</div> 		
+					<div class="empty_block"></div> 
+		 				<div class="file-field input-field btn_field second_page_uploader">
+						      <div class="btn grey lighten-5">
+						       		 <span>File</span>
+						       		 <input id="fileupload2" type="file" name="files[]" />
+						       		 <input name="second_page_image_url" type="hidden" />
+						      </div>
+						       <div class="file-path-wrapper">
+						       		 <input id="file-path validate" type="text" placeholder="중요한 사진 1장만 업로" />
+						      </div>  
+						
+					</div>		
 			    </div>
 				
 				<div class="left_page_short_text">
@@ -139,7 +139,7 @@
 			</div>
 
 				<div class="file-field input-field btn_field third_page_uploader">
-					      <div class="btn">
+					      <div class="btn grey lighten-5">
 					       		 <span>File</span>
 					       		 <input id="fileupload3" type="file" name="files[]" multiple />
 					      </div>
