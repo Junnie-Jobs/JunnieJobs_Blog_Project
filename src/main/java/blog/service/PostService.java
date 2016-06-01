@@ -62,17 +62,5 @@ public class PostService {
 		commentDao.delete(postId);
 	}
 
-	public void updateQuestion(long postId, Post newPost, User user) throws CannotOperateException {
-		Post post = postDao.findById(postId);
-        if (post == null) {
-        	throw new EmptyResultDataAccessException("존재하지 않는 질문입니다.", 1);
-        }
-        
-        if (!post.isSameUser(user)) {
-            throw new CannotOperateException("다른 사용자가 쓴 글을 수정할 수 없습니다.");
-        }
-        
-        post.update(newPost);
-        postDao.update(post);
-	}
+
 }

@@ -1,5 +1,6 @@
 package blog.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Post {
@@ -7,58 +8,103 @@ public class Post {
 	private long postId;
 	private String writer;
 	private String title;
-	private String contents;
 	private Date createdDate;
-	private String mainCoverPath;
 	private int countOfComment;
+	private String first_page_image_url;
+	private String second_page_image_url;
+	private String second_page_short_text;
+	private String second_page_long_text;
+	private String third_page_thumb1_image_url;
+	private String third_page_thumb2_image_url;
+	private String third_page_thumb3_image_url;
+	private String third_page_thumb4_image_url;
+	private String third_page_thumb5_image_url;
+	private String third_page_thumb6_image_url;
 	
-//	//** 조회수 */
-//	private int hit = 0;
-//	//** 수정 일시 */
-//	private String modDate;
-	
-//	public int getHit() {
-//		return hit;
-//	}
-//
-//	public void setHit(int hit) {
-//		this.hit = hit;
-//	}
-//
-//	public String getModDate() {
-//		return modDate;
-//	}
-//
-//	public void setModDate(String modDate) {
-//		this.modDate = modDate;
-//	}
-//		
-
 	public Post() {
 	}
 
-	public Post(String writer, String title, String contents, String mainCoverPath) {
-		this(0, writer, title, contents, new Date(), mainCoverPath, 0);
+
+	public Post(
+			String writer, 
+			String title, 
+			String first_page_image_url, 
+			String second_page_image_url,
+			String second_page_short_text,
+			String second_page_long_text,
+			String third_page_thumb1_image_url, 
+			String third_page_thumb2_image_url, 
+			String third_page_thumb3_image_url, 
+			String third_page_thumb4_image_url, 
+			String third_page_thumb5_image_url, 
+			String third_page_thumb6_image_url 
+			) {
+		this(0, writer, title, new Date(), 0, 
+				first_page_image_url, 
+				second_page_image_url,
+				second_page_short_text,
+				second_page_long_text,
+				third_page_thumb1_image_url,
+				third_page_thumb2_image_url,
+				third_page_thumb3_image_url,
+				third_page_thumb4_image_url,
+				third_page_thumb5_image_url,
+				third_page_thumb6_image_url
+				);
 	}
 
-	public Post(long postId, String writer, String title, String contents, Date createdDate, String mainCoverPath,
-			int countOfComment) {
+	public Post(long postId, 
+			String writer, 
+			String title, 
+			Date createdDate,			
+			int countOfComment, 
+			String first_page_image_url, 
+			String second_page_image_url,
+			String second_page_short_text,
+			String second_page_long_text,
+			String third_page_thumb1_image_url, 
+			String third_page_thumb2_image_url, 
+			String third_page_thumb3_image_url, 
+			String third_page_thumb4_image_url, 
+			String third_page_thumb5_image_url, 
+			String third_page_thumb6_image_url 
+			) {
 		this.postId = postId;
 		this.writer = writer;
 		this.title = title;
-		this.contents = contents;
 		this.createdDate = createdDate;
-		this.mainCoverPath = mainCoverPath;
 		this.countOfComment = countOfComment;
+		this.first_page_image_url = first_page_image_url;
+		this.second_page_image_url = second_page_image_url;
+		this.second_page_short_text = second_page_short_text;
+		this.second_page_long_text = second_page_long_text;
+		this.third_page_thumb1_image_url = third_page_thumb1_image_url;
+		this.third_page_thumb2_image_url = third_page_thumb2_image_url;
+		this.third_page_thumb3_image_url = third_page_thumb3_image_url;
+		this.third_page_thumb4_image_url = third_page_thumb4_image_url;
+		this.third_page_thumb5_image_url = third_page_thumb5_image_url;
+		this.third_page_thumb6_image_url = third_page_thumb6_image_url;
 	}
 
-	public String getMainCoverPath() {
-		return mainCoverPath;
+
+
+	public Post(
+			long postId, 
+			String writer, 
+			String title, 
+			Timestamp createdDate, 
+			int countOfComment, 
+			String first_page_image_url) {
+		
+		this.postId = postId;
+		this.writer = writer;
+		this.title = title;
+		this.createdDate = createdDate;
+		this.countOfComment = countOfComment;
+		this.first_page_image_url = first_page_image_url;
+		
 	}
 
-	public void setMainCoverPath(String mainCoverPath) {
-		this.mainCoverPath = mainCoverPath;
-	}
 
 	public long getpostId() {
 		return postId;
@@ -74,14 +120,6 @@ public class Post {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getContents() {
-		return contents;
-	}
-
-	public void setContents(String contents) {
-		this.contents = contents;
 	}
 
 	public String getWriter() {
@@ -105,15 +143,90 @@ public class Post {
 		return user.isSameUser(this.writer);
 	}
 
-//	public void update(Question newQuestion) {
-//		this.title = newQuestion.title;
-//		this.contents = newQuestion.contents;
-//	}
+
+	public String getFirst_page_image_url() {
+		return first_page_image_url;
+	}
+
+	public void setFirst_page_image_url(String first_page_image_url) {
+		this.first_page_image_url = first_page_image_url;
+	}
+
+	public String getSecond_page_image_url() {
+		return second_page_image_url;
+	}
+
+	public void setSecond_page_image_url(String second_page_image_url) {
+		this.second_page_image_url = second_page_image_url;
+	}
+	public String getSecond_page_short_text() {
+		return second_page_short_text;
+	}
+
+	public void setSecond_page_short_text(String second_page_short_text) {
+		this.second_page_short_text = second_page_short_text;
+	}
+
+	public String getSecond_page_long_text() {
+		return second_page_long_text;
+	}
+
+	public void setSecond_page_long_text(String second_page_long_text) {
+		this.second_page_long_text = second_page_long_text;
+	}
+
+	public String getThird_page_thumb1_image_url() {
+		return third_page_thumb1_image_url;
+	}
+
+	public void setThird_page_thumb1_image_url(String third_page_thumb1_image_url) {
+		this.third_page_thumb1_image_url = third_page_thumb1_image_url;
+	}
+
+	public String getThird_page_thumb2_image_url() {
+		return third_page_thumb2_image_url;
+	}
+
+	public void setThird_page_thumb2_image_url(String third_page_thumb2_image_url) {
+		this.third_page_thumb2_image_url = third_page_thumb2_image_url;
+	}
+
+	public String getThird_page_thumb3_image_url() {
+		return third_page_thumb3_image_url;
+	}
+
+	public void setThird_page_thumb3_image_url(String third_page_thumb3_image_url) {
+		this.third_page_thumb3_image_url = third_page_thumb3_image_url;
+	}
+
+	public String getThird_page_thumb4_image_url() {
+		return third_page_thumb4_image_url;
+	}
+
+	public void setThird_page_thumb4_image_url(String third_page_thumb4_image_url) {
+		this.third_page_thumb4_image_url = third_page_thumb4_image_url;
+	}
+
+	public String getThird_page_thumb5_image_url() {
+		return third_page_thumb5_image_url;
+	}
+
+	public void setThird_page_thumb5_image_url(String third_page_thumb5_image_url) {
+		this.third_page_thumb5_image_url = third_page_thumb5_image_url;
+	}
+
+	public String getThird_page_thumb6_image_url() {
+		return third_page_thumb6_image_url;
+	}
+
+	public void setThird_page_thumb6_image_url(String third_page_thumb6_image_url) {
+		this.third_page_thumb6_image_url = third_page_thumb6_image_url;
+	}
 
 	@Override
 	public String toString() {
-		return "Post [postId=" + postId + ", writer=" + writer + ", title=" + title + ", contents="
-				+ contents + ", createdDate=" + createdDate + ", countOfComment=" + countOfComment + "]";
+		return "Post [postId=" + postId + ", writer=" + writer + ", title=" + title + ", second_page_long_text="
+				+ second_page_long_text + ", createdDate=" + createdDate + ", countOfComment=" + countOfComment + "]";
 	}
 
 	@Override
@@ -139,13 +252,48 @@ public class Post {
 	}
 
 	public Post newPost(User user) {
-		return new Post(user.getUserId(), title, contents, mainCoverPath);
+		return new Post(user.getUserId(), title, 
+				first_page_image_url, 
+				second_page_image_url,
+				second_page_short_text,
+				second_page_long_text,
+				third_page_thumb1_image_url,
+				third_page_thumb2_image_url,
+				third_page_thumb3_image_url,
+				third_page_thumb4_image_url,
+				third_page_thumb5_image_url,
+				third_page_thumb6_image_url
+				);
 	}
 
 	public void update(Post newPost) {
 		this.title = newPost.title;
-		this.contents = newPost.contents;	
+		this.second_page_long_text = newPost.second_page_long_text;	
 	}
 
+	
+	
+	//TODO 아래는 추가예정!	
+//		//** 조회수 */
+//		private int hit = 0;
+//		//** 수정 일시 */
+//		private String modDate;
+		
+//		public int getHit() {
+//			return hit;
+//		}
+	//
+//		public void setHit(int hit) {
+//			this.hit = hit;
+//		}
+	//
+//		public String getModDate() {
+//			return modDate;
+//		}
+	//
+//		public void setModDate(String modDate) {
+//			this.modDate = modDate;
+//		}
+	//	
 
 }

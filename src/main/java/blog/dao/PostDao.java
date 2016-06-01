@@ -29,8 +29,20 @@ public class PostDao {
 	private JdbcTemplate jdbcTemplate;
 	
     public Post insert(Post post) {
-    	
-        String sql = "INSERT INTO posts (writer, title, contents, createdDate, mainCoverPath) VALUES (?, ?, ?, ?, ?)";
+    	    	
+        String sql = "INSERT INTO posts (writer, title, createdDate, "
+        		+ "first_page_image_url, "
+        		+ "second_page_image_url, "
+        		+ "second_page_short_text"
+        		+ "second_page_long_text"
+        		+ "third_page_thumb1_image_url"
+        		+ "third_page_thumb2_image_url"
+        		+ "third_page_thumb3_image_url"
+        		+ "third_page_thumb4_image_url"
+        		+ "third_page_thumb5_image_url"
+        		+ "third_page_thumb6_image_url"
+        		+ ") VALUES (?, ?, ?, ?, ?)";
+        
         PreparedStatementCreator psc = new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
@@ -38,9 +50,17 @@ public class PostDao {
 				
 				pstmt.setString(1, post.getWriter());
 				pstmt.setString(2, post.getTitle());
-				pstmt.setString(3, post.getContents());
-				pstmt.setTimestamp(4, new Timestamp(post.getTimeFromCreateDate()));
-				pstmt.setString(5, post.getMainCoverPath());
+				pstmt.setTimestamp(3, new Timestamp(post.getTimeFromCreateDate()));
+				pstmt.setString(4, post.getFirst_page_image_url());
+				pstmt.setString(5, post.getSecond_page_image_url());
+				pstmt.setString(6, post.getSecond_page_short_text());
+				pstmt.setString(7, post.getSecond_page_long_text());
+				pstmt.setString(8, post.getThird_page_thumb1_image_url());
+				pstmt.setString(9, post.getThird_page_thumb2_image_url());
+				pstmt.setString(10, post.getThird_page_thumb3_image_url());
+				pstmt.setString(11, post.getThird_page_thumb4_image_url());
+				pstmt.setString(12, post.getThird_page_thumb5_image_url());
+				pstmt.setString(13, post.getThird_page_thumb6_image_url());
 			
 				return pstmt;
 			}
@@ -62,7 +82,9 @@ public class PostDao {
     }
 	
 	public List<Post> findAll() {
-		String sql = "SELECT postId, writer, title, createdDate, mainCoverPath, countOfAnswer FROM posts "
+		String sql = "SELECT postId, writer, title, createdDate, countOfAnswer, "
+				+ "first_page_image_url "
+				+ "FROM posts "
 				+ "order by postId desc";
 		
 		RowMapper<Post> rm = new RowMapper<Post>() {
@@ -71,26 +93,19 @@ public class PostDao {
 				return new Post(rs.getLong("postId"),
 						rs.getString("writer"), 
 						rs.getString("title"), 
-						null,
 						rs.getTimestamp("createdDate"),
-						rs.getString("mainCoverPath"),
-						rs.getInt("countOfAnswer"));
-					
+						rs.getInt("countOfAnswer"),
+						rs.getString("first_page_image_url")
+						);
 			}
-//			private long postId;
-//			private String writer;
-//			private String title;
-//			private String contents;
-//			private Date createdDate;
-//			private int countOfComment;
+
 		};
 		
 		return jdbcTemplate.query(sql, rm);
 	}
 
 	public Post findById(long postId) {
-		String sql = "SELECT postId, writer, title, contents, createdDate, mainCoverPath, countOfAnswer FROM posts "
-				+ "WHERE postId = ?";
+		String sql = "SELECT * FROM posts WHERE postId = ?";
 		
 		RowMapper<Post> rm = new RowMapper<Post>() {
 			@Override
@@ -98,23 +113,32 @@ public class PostDao {
 				return new Post(rs.getLong("postId"),
 						rs.getString("writer"), 
 						rs.getString("title"),
-						rs.getString("contents"),
 						rs.getTimestamp("createdDate"),
-						rs.getString("mainCoverPath"),
-						rs.getInt("countOfAnswer"));
+						rs.getInt("countOfAnswer"),
+						rs.getString("first_page_image_url"),
+						rs.getString("second_page_image_url"),
+						rs.getString("second_page_short_text"),
+						rs.getString("second_page_long_text"),
+						rs.getString("third_page_thumb1_image_url"),
+						rs.getString("third_page_thumb2_image_url"),
+						rs.getString("third_page_thumb3_image_url"),
+						rs.getString("third_page_thumb4_image_url"),
+						rs.getString("third_page_thumb5_image_url"),
+						rs.getString("third_page_thumb6_image_url")
+						);
 			}
 		};
 		
 		return jdbcTemplate.queryForObject(sql, rm, postId);
 	}
 
-	public void update(Post post) {
-		String sql = "UPDATE posts set title = ?, contents = ? WHERE postId = ?";
-        jdbcTemplate.update(sql, 
-        		post.getTitle(),
-                post.getContents(),
-                post.getpostId());
-	}
+//	public void update(Post post) {
+//		String sql = "UPDATE posts set title = ?, second_page_long_text = ? WHERE postId = ?";
+//        jdbcTemplate.update(sql, 
+//        		post.getTitle(),
+//                post.getsecond_page_long_text(),
+//                post.getpostId());
+//	}
 
 	public void delete(long postId) {
 		String sql = "DELETE FROM posts WHERE postId = ?";

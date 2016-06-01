@@ -12,7 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="/resources/css/show.css">
 	<link rel="stylesheet" type="text/css" href="/resources/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/resources/css/font-awesome.min.css">
-<!-- 	<link rel="stylesheet" type="text/css" href="/resources/css/materialize.css"> -->
 	 
 	</head>
 	<body>
@@ -40,8 +39,9 @@
             <div class="alert alert-danger" role="alert">${errorMessage}</div>
         </c:if>		
 
-		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
+
+		<!-- First Page -->
+			<section id="intro" class="main style1 dark fullscreen" style="background: url("${post.first_page_image_url}"); ">
 				<div class="content container 75%">
 					<header>
 						<h2>${post.title}</h2>
@@ -52,21 +52,24 @@
 				</div>
 			</section>
 
-		<!-- One -->
+
+
+			<!-- Second Page -->
 			<section id="one" class="main style2 right dark fullscreen">
 				<div id="a">
-					<div class="firstImage"></div>
-					<div class="firstImageExplain">
-						배가 항구에 머문다면</br>
-						높은 파도에 시달릴 일도 </br>
-						거친 비바람에 시달릴일도 없을 것이다.</br>
-						하지만 그것이 배의 존재이유는 아니다.</br>
+					<div class="firstImage">
+						<img src="${post.second_page_image_url}">
 					</div>
-				</div><div id="b">${post.contents}<br><br></div>
+					<div class="firstImageExplain">
+						${post.second_page_short_text}
+					</div> 
+				</div><div id="b">${post.second_page_long_text}<br><br></div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
+
+
 			
-					<!-- Work -->
+			<!-- Third Page -->
 			<section id="work" class="main style3 primary">
 				<div class="content container">
 					<header>
@@ -75,17 +78,34 @@
 
 					<!-- Lightbox Gallery  -->
 						<div class="container 75% gallery">
+
 							<div class="row 0% images">
-								<div class="6u 12u(mobile)"><a href="/resources/images/fulls/07.jpg" class="image fit from-left"><img src="/resources/images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="6u 12u(mobile)"><a href="/resources/images/fulls/02.jpg" class="image fit from-right"><img src="/resources/images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
+								<div class="6u 12u(mobile)">
+									<a href="${post.third_page_thumb1_image_url}" class="image fit from-left"><img src="${post.third_page_thumb1_image_url}" title="The Anonymous Red" alt="" /></a>
+								</div>
+
+								<div class="6u 12u(mobile)">
+									<a href="${post.third_page_thumb2_image_url}" class="image fit from-right"><img src="${post.third_page_thumb2_image_url}" alt="" /></a>
+								</div>
 							</div>
+
 							<div class="row 0% images">
-								<div class="6u 12u(mobile)"><a href="/resources/images/fulls/03.jpg" class="image fit from-left"><img src="/resources/images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="6u 12u(mobile)"><a href="/resources/images/fulls/04.jpg" class="image fit from-right"><img src="/resources/images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
+								<div class="6u 12u(mobile)">
+									<a href="${post.third_page_thumb3_image_url}" class="image fit from-left"><img src="${post.third_page_thumb3_image_url}" title="Air Lounge" alt="" /></a>
+								</div>
+
+								<div class="6u 12u(mobile)">
+									<a href="${post.third_page_thumb4_image_url}" class="image fit from-right"><img src="${post.third_page_thumb4_image_url}" title="Carry on" alt="" /></a>
+								</div>
 							</div>
+
 							<div class="row 0% images">
-								<div class="6u 12u(mobile)"><a href="/resources/images/fulls/05.jpg" class="image fit from-left"><img src="/resources/images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
-								<div class="6u 12u(mobile)"><a href="/resources/images/fulls/06.jpg" class="image fit from-right"><img src="/resources/images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
+								<div class="6u 12u(mobile)">
+									<a href="${post.third_page_thumb5_image_url}" class="image fit from-left"><img src="${post.third_page_thumb5_image_url}" title="The sparkling shell" alt="" /></a>
+								</div>
+								<div class="6u 12u(mobile)">
+									<a href="${post.third_page_thumb6_image_url}" class="image fit from-right"><img src="${post.third_page_thumb6_image_url}" title="Bent IX" alt="" /></a>
+								</div>
 							</div>
 						</div>
 
@@ -130,14 +150,13 @@
 					<div class="comment_write_area">
 							<textarea name="contents" class="comment_input" placeholder="글쓴이에게 말을 걸어주세요"></textarea>
 							<button class="answer">댓글</button>
-					<!-- 		<button class="addComment btn waves-effect waves-light" type="submit" name="action">댓글달기</button> -->
 					</div>
 			
 				
 			</section>
 
 
-		<!-- Scripts -->
+
 		    <script src="/resources/js/jquery.min.js"></script> 
 		    <script src="/resources/js/handlebars-v4.0.5.js"></script>
 			<script src="/resources/js/jquery.poptrox.min.js"></script>

@@ -34,10 +34,14 @@
 					height: 300px;
 /*					border:1px solid black;*/
 					margin: 0 auto 0 auto;
-					background-image: url("/resources/images/profileBook.jpg");
-					background-size: 100% 100%;
+					/*background-image: url("/resources/images/profileBook.jpg");*/
+					/*background-size: auto 100%;*/
 
 				}
+
+			#a .firstImage img{
+				background-size: auto 100%;
+			}
 
 			#a .firstImageExplain{
 					width: 100%;
@@ -3026,7 +3030,7 @@
 /* Intro */
 /*url("/resources//images/P1240294.jpg")*/
 	#intro {
-		background: url("/resources/images/15.JPG");
+		/*background: url("/resources/images/15.JPG");*/
 		background-size: 100% 100%, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;

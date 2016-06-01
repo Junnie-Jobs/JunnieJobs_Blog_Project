@@ -31,6 +31,7 @@ import blog.dao.CommentDao;
 import blog.dao.PostDao;
 import blog.model.Comment;
 import blog.model.FileMetadata;
+import blog.model.Post;
 import blog.model.Result;
 import blog.model.User;
 import core.web.argumentresolver.LoginUser;
@@ -64,7 +65,7 @@ public class ApiPostController {
 
 	@RequestMapping(value = "/fileUpload") // ajax에서 호출하는 부분
 	public Object upload(@RequestParam("files[]") List<MultipartFile> files, HttpSession session) throws IOException {
-		// Multipart로// 받는다.
+
 		System.out.println("fileUpload 처리 api");
 
 		List<FileMetadata> fileMetadatas = new ArrayList<>();
@@ -75,39 +76,19 @@ public class ApiPostController {
 		for (MultipartFile file : files) {
 
 			File newFile = new File(path + "/" + file.getOriginalFilename());
-			// String path = "/images/upload/";
-			// String path = StaticUtil.getUploadPath();
-			// StaticUtil.createDirectory(path);
-			// File saved = StaticUtil.saveFile(file, path);
-			// File newFile = new File(path + "/" + file.getOriginalFilename());
-
+			
 			try {
 				FileUtils.writeByteArrayToFile(newFile, file.getBytes());
 				FileMetadata fileMetadata = new FileMetadata();
 				fileMetadata.setName(file.getOriginalFilename());
 				fileMetadata.setUrl(file.getOriginalFilename());
+				System.out.println(fileMetadata.getUrl());
 				fileMetadatas.add(fileMetadata);
-				System.out.println("모델 값을 찍어보면 ?");
-				// modelAndView.addObject("message",
-				// img_url+file.getOriginalFilename());
-				// modelAndView.addObject("imgLink",
-				// img_url+file.getOriginalFilename());
+
 			} catch (IOException e) {
 				e.printStackTrace();
 
-				// modelAndView.addObject("message", "파일업로드 실패!");
 			}
-
-			// System.out.println("test1");
-			//
-			// System.out.println("test2");
-			//
-			// System.out.println("test3");
-			// FileMetadata fileMetadata = new FileMetadata();
-			// fileMetadata.setName(file.getOriginalFilename());
-			// fileMetadata.setUrl(path + File.separator + saved.getName());
-			// fileMetadatas.add(fileMetadata);
-			//
 
 		}
 
@@ -117,28 +98,33 @@ public class ApiPostController {
 
 	}
 
-	@RequestMapping(value = "/fileUpload2") // ajax에서 호출하는 부분
-	public Object upload2(@RequestParam("files[]") List<MultipartFile> files, HttpSession session) throws IOException {
+	@RequestMapping(value = "/fileUploadForOne") // ajax에서 호출하는 부분
+	public Map<String, Object> uploadForOne(MultipartFile file, Post post, HttpSession session)
+			throws IOException {
 
-		log.debug("fileUpload2 처리 api");
 		List<FileMetadata> fileMetadatas = new ArrayList<>();
+		System.out.println(post);
+		System.out.println(post.getFirst_page_image_url());
 		final String path = session.getServletContext().getRealPath("/images/upload/");
 		log.info("path:{}", path);
 
-		System.out.println(files);
-		for (MultipartFile file : files) {
+		File newFile = new File(path + "/" + file.getOriginalFilename());
+		System.out.println("Test1");
+		try {
+			System.out.println("Test2");
+			FileUtils.writeByteArrayToFile(newFile, file.getBytes());
+			System.out.println("Test3");
+			FileMetadata fileMetadata = new FileMetadata();
+			System.out.println("Test4");
+			fileMetadata.setName(file.getOriginalFilename());
+			System.out.println("Test5");
+			fileMetadata.setUrl(path + file.getOriginalFilename());
+			System.out.println("Test6");
+			fileMetadatas.add(fileMetadata);
 
-			File newFile = new File(path + "/" + file.getOriginalFilename());
+		} catch (IOException e) {
+			e.printStackTrace();
 
-			try {
-				FileUtils.writeByteArrayToFile(newFile, file.getBytes());
-				FileMetadata fileMetadata = new FileMetadata();
-				fileMetadata.setName(file.getOriginalFilename());
-				fileMetadata.setUrl(file.getOriginalFilename());
-				fileMetadatas.add(fileMetadata);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
 
 		Map<String, Object> response = new HashMap<>();
