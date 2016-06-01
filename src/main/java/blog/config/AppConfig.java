@@ -13,6 +13,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 //
 //@EnableAspectJAutoProxy(proxyTargetClass = true)
 @Configuration
@@ -31,4 +33,9 @@ public class AppConfig {
 		return new JdbcTemplate(dataSource);
 	}
 	
+	@Bean
+	public MultipartResolver multipartResolver(){
+		MultipartResolver multipartResolver = new CommonsMultipartResolver();
+		return multipartResolver;	
+	}
 }

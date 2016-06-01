@@ -30,7 +30,7 @@ public class PostDao {
 	
     public Post insert(Post post) {
     	
-        String sql = "INSERT INTO posts (writer, title, contents, createdDate) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO posts (writer, title, contents, createdDate, mainCoverPath) VALUES (?, ?, ?, ?, ?)";
         PreparedStatementCreator psc = new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
@@ -40,6 +40,8 @@ public class PostDao {
 				pstmt.setString(2, post.getTitle());
 				pstmt.setString(3, post.getContents());
 				pstmt.setTimestamp(4, new Timestamp(post.getTimeFromCreateDate()));
+				pstmt.setString(5, post.getMainCoverPath());
+			
 				return pstmt;
 			}
 		};
@@ -60,7 +62,7 @@ public class PostDao {
     }
 	
 	public List<Post> findAll() {
-		String sql = "SELECT postId, writer, title, createdDate, countOfAnswer FROM posts "
+		String sql = "SELECT postId, writer, title, createdDate, mainCoverPath, countOfAnswer FROM posts "
 				+ "order by postId desc";
 		
 		RowMapper<Post> rm = new RowMapper<Post>() {
@@ -71,7 +73,9 @@ public class PostDao {
 						rs.getString("title"), 
 						null,
 						rs.getTimestamp("createdDate"),
+						rs.getString("mainCoverPath"),
 						rs.getInt("countOfAnswer"));
+					
 			}
 //			private long postId;
 //			private String writer;
@@ -85,7 +89,7 @@ public class PostDao {
 	}
 
 	public Post findById(long postId) {
-		String sql = "SELECT postId, writer, title, contents, createdDate, countOfAnswer FROM posts "
+		String sql = "SELECT postId, writer, title, contents, createdDate, mainCoverPath, countOfAnswer FROM posts "
 				+ "WHERE postId = ?";
 		
 		RowMapper<Post> rm = new RowMapper<Post>() {
@@ -96,6 +100,7 @@ public class PostDao {
 						rs.getString("title"),
 						rs.getString("contents"),
 						rs.getTimestamp("createdDate"),
+						rs.getString("mainCoverPath"),
 						rs.getInt("countOfAnswer"));
 			}
 		};
@@ -104,7 +109,7 @@ public class PostDao {
 	}
 
 	public void update(Post post) {
-		String sql = "UPDATE postS set title = ?, contents = ? WHERE postId = ?";
+		String sql = "UPDATE posts set title = ?, contents = ? WHERE postId = ?";
         jdbcTemplate.update(sql, 
         		post.getTitle(),
                 post.getContents(),
@@ -112,12 +117,12 @@ public class PostDao {
 	}
 
 	public void delete(long postId) {
-		String sql = "DELETE FROM postS WHERE postId = ?";
+		String sql = "DELETE FROM posts WHERE postId = ?";
 		jdbcTemplate.update(sql, postId);
 	}
 
 	public void updateCountOfAnswer(long postId) {
-		String sql = "UPDATE postS set countOfAnswer = countOfAnswer + 1 WHERE postId = ?";
+		String sql = "UPDATE posts set countOfAnswer = countOfAnswer + 1 WHERE postId = ?";
 		jdbcTemplate.update(sql, postId);
 	}
 	

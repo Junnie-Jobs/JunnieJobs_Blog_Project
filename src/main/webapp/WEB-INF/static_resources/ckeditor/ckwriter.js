@@ -27,13 +27,13 @@ CKEDITOR.editorConfig = function( config ) {
  config.toolbar_WriteToolBar =
 [
 ['Source'],
-	['Cut','Copy','Paste','PasteText','PasteFromWord','-','SpellChecker', 'Scayt'],
-	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],				
+//	['Cut','Copy','Paste','PasteText','PasteFromWord','-','SpellChecker', 'Scayt'],
+//	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],				
 
 	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
 	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
 	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],	
-	['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar'],
+//	['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar'],
 
 	['Styles','Format','Font','FontSize'],
 	['TextColor','BGColor'],

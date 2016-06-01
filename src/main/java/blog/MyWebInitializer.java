@@ -13,9 +13,8 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter;
-
 import blog.config.WebMvcConfig;
+
 
 
 public class MyWebInitializer implements WebApplicationInitializer {

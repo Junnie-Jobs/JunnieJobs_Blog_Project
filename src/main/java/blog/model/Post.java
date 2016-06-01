@@ -9,6 +9,7 @@ public class Post {
 	private String title;
 	private String contents;
 	private Date createdDate;
+	private String mainCoverPath;
 	private int countOfComment;
 	
 //	//** 조회수 */
@@ -36,18 +37,27 @@ public class Post {
 	public Post() {
 	}
 
-	public Post(String writer, String title, String contents) {
-		this(0, writer, title, contents, new Date(), 0);
+	public Post(String writer, String title, String contents, String mainCoverPath) {
+		this(0, writer, title, contents, new Date(), mainCoverPath, 0);
 	}
 
-	public Post(long postId, String writer, String title, String contents, Date createdDate,
+	public Post(long postId, String writer, String title, String contents, Date createdDate, String mainCoverPath,
 			int countOfComment) {
 		this.postId = postId;
 		this.writer = writer;
 		this.title = title;
 		this.contents = contents;
 		this.createdDate = createdDate;
+		this.mainCoverPath = mainCoverPath;
 		this.countOfComment = countOfComment;
+	}
+
+	public String getMainCoverPath() {
+		return mainCoverPath;
+	}
+
+	public void setMainCoverPath(String mainCoverPath) {
+		this.mainCoverPath = mainCoverPath;
 	}
 
 	public long getpostId() {
@@ -129,7 +139,7 @@ public class Post {
 	}
 
 	public Post newPost(User user) {
-		return new Post(user.getUserId(), title, contents);
+		return new Post(user.getUserId(), title, contents, mainCoverPath);
 	}
 
 	public void update(Post newPost) {

@@ -1,8 +1,23 @@
+ .first_page .main_photo_wrapper .input-field input[type=text]:focus + label {
+     border-bottom: 1px solid white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+  -moz-box-shadow: 0 1px 0 0 white;
+  box-shadow: 0 1px 0 0 white;
+   }
+
+.first_page .main_photo_wrapper .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
 .main_photo_wrapper{
 
 	width: 100%;
 	height: 700px;
-/*	border:1px solid black;*/
+	border:0.5px solid;
+	border-color: rgba(255,255,255,1);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 
 }
 .main_photo_wrapper .defualt_message{
@@ -13,6 +28,14 @@
 	text-align: center;
 	font-size: 40px;
 	color:rgba(0,0,0,0.1);
+	
+}
+.main_photo_wrapper .header_text{
+	margin: 300px auto -100px auto;
+	display: none;
+	text-align: center;
+	width: 60%;
+	color: white;
 }
 
 .main_photo_wrapper .photo_uploader{
@@ -44,24 +67,30 @@
 
 }
 
+.main_upload_btn{
+	display: none;
+}
+
 .buttons {
 	
-	width: 200px; 
+	width: 98%;
 	height: 50px;
 	text-align: right;
-	float: right;
-	margin-right:20px;
-	margin-top: 10px;
+/*	border:3px solid red;*/
+	position: fixed;
+	margin-top: 15px;
+	top: 0;
+
 		
 }
 	
 .buttons input {
 		
-		width:66px;
-		height: 30px;
+		width:75px;
+		height: 35px;
 		line-height: 25px;
 		background-color:rgba(255,255,255,0);
-		border-radius:15px;
+		border-radius:20px;
 		transition-duration: 0.5s;
 		transition-timing-function: ease;
 		margin-left:5px;
@@ -83,8 +112,6 @@
 		width:80%;
 		height:100px;
 		margin:10px auto 0 auto;
-
-		
 	}
 	
 	.header input{
@@ -136,19 +163,163 @@
 	clear:both;
 	height:1px;
 	}
+
+	.second_page{
+
+		width: 100%;
+		height: 700px;
+	/*	border:1px solid black;*/
+		background-color: rgba(250,241,199,1);
+
+	}
+
+	.second_page .left_page{
+
+		width: 50%;
+		height: 100%;
+	/*	border:1px solid red;*/
+		box-sizing:border-box;
+		float: left;
+		padding: 15px;
+
+	}
+
+	.second_page .left_page .left_page_img{
+
+		width: 60%;
+		height: 250px;
+		/*border:1px solid black;*/
+		margin: 10% auto 0 auto;
+		background-color: white;
+	}
+
+	.second_page .left_page .left_page_short_text{
+
+		width: 60%;
+		height: 200px;
+		/*border:1px solid black;*/
+		margin: 20px auto 0 auto;
+		padding: 15px;
+	/*	background-color: white;*/
+
+		
+	}
+
+	.second_page .left_page .left_page_short_text textarea{
+
+		width: 100%;
+		height: 100%;
+		border:none;
+		resize:none;
+		text-align: center;
+	}
+
+	.second_page .right_page{
+
+		width: 50%;
+		height: 100%;
+	/*	border:1px solid blue;*/
+		box-sizing:border-box;
+		float: left;
+		padding: 15px;
+
+
+	}
+
+	.second_page .right_page .text_form{
+
+		width: 90%;
+		height: 90%;
+		box-sizing:border-box;
+/*		border:1px solid black;*/
+		padding: 15px;
+		margin: 10% auto 0 auto;
+		background-color: white;
+	}
+
 	
 	
-	.writeArea{
+	.second_page .right_page .text_form .writeArea{
 	
-		width:80%;
-		height:300px;
-		margin:30px auto 0 auto;
+		width:100%;
+		height:100%;
+	/*	margin:30px auto 0 auto;*/
 	
 	}
-	
-	textarea{
-	
-	clear:both;
-	width:80%;
-	
+
+
+	.second_page .right_page .text_form .writeArea textarea{
+		resize:none;
+		height: 300px;
 	}
+
+	.third_page{
+		width: 100%;
+		height: 700px;
+		border:1px solid;
+		border-color: rgba(255,255,255,0);
+
+	}
+
+	.third_page .image_area{
+
+		width: 90%;
+		height: 75%;
+		margin: 7% auto 0 auto;
+		box-sizing:border-box;
+
+	}
+
+	.third_page .image_area .thumb{
+
+		width: 33.3%;
+		border:1px dotted;
+		border-color: rgba(0,0,0,0.4);
+		height: 50%;
+		box-sizing:border-box;
+		float: left;
+
+	}
+
+	.third_page .image_area .thumb1{
+		border-top: none;
+		border-left:none;
+	}
+
+	.third_page .image_area .thumb2{
+		border-top: none;
+		border-left:none;
+	} 
+
+	.third_page .image_area .thumb3{
+		border-top: none;
+		border-right: none;
+		border-left:none;
+	}
+
+	.third_page .image_area .thumb4{
+		border-top: none;
+		border-left:none;
+	}
+
+	.third_page .image_area .thumb5{
+		border-top: none;
+		border-bottom: none;
+		border-left:none;
+	}
+
+	.third_page .image_area .thumb6{
+		border-right: none;
+		border-left:none;
+		border-top: none;
+	}
+
+
+
+	.third_page .btn_field{
+		width: 90%;
+		margin: 20px auto -20px auto;
+
+	}
+
+

@@ -1,7 +1,9 @@
-package blog.home.controller;
+package blog.controller.home;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,15 +19,18 @@ import blog.model.User;
 @Controller
 public class HomeController {
 	
+	
+	private static final Logger log = LoggerFactory.getLogger(HomeController.class);
+	
 	@Autowired
 	private UserDao userDao; 
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView home(Model model, HttpSession session) throws Exception {
-		System.out.println("첫번째로 거치는 곳");
+		
 		ModelAndView mav = new ModelAndView("index");
 		model.addAttribute("user", new User());
-
+		log.debug("Home 화면으로 이동");
 		return mav;
 	}
 	
@@ -35,15 +40,24 @@ public class HomeController {
 		return "post";
 	}
 	
+	
+	@RequestMapping(value = "/post/fileUploadTest", method = RequestMethod.GET)
+	public String fileUploadTest(Model model, HttpSession session) throws Exception {
+		
+		return "redirect:/fileUploadTest";
+	}
+	
+	@RequestMapping(value = "/fileUploadTest", method = RequestMethod.GET)
+	public String fileUploadTest2(Model model, HttpSession session) throws Exception {
+		
+		return "fileUploadTest";
+	}
+	
 	@RequestMapping(value = "/loginPages", method = RequestMethod.GET)
 	public String loginPages() throws Exception {
 		return "loginPages";
 	}
 	
-//	@RequestMapping(value = "/write", method = RequestMethod.GET)
-//	public String write() throws Exception {
-//		return "write";
-//	}
 	
 	@RequestMapping(value = "/postBook", method = RequestMethod.GET)
 	public String postBook() throws Exception {
