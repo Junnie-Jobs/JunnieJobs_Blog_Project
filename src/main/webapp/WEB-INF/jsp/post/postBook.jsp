@@ -45,19 +45,26 @@
         <c:forEach items="${posts}" var="each">
           <li class="post"><a href="/write/postBook/${each.postId}">
             <div class="card small">
-                <div class="card-image">
-                  <img src="http://localhost:8080/images/upload/${each.first_page_image_url}">
-                  <span class="card-title">${each.title}</span>
-                </div>
-                <div class="card-content">
-                  <p>${each.writer}</p></br>
-                   <span class="time"><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${each.createdDate}" /></span>
-                  <span class="point">${each.countOfComment}</span>
-                 
-                </div>
+                  <div class="card-image">
+                    <img src="http://localhost:8080/images/upload/${each.first_page_image_url}">
+                    <span class="card-title">${each.title}</span>
+                  </div>
+
+                  <div class="card-content">
+                      <p>${each.writer}</p></br>
+                       <span class="time">
+                          <fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${each.createdDate}" /></span>
+                      <span class="point">댓글 수: ${each.countOfComment}</span>
+                      <div class="crud">
+                          <span class="update">수정</span>
+                          <span class="delete">삭제</span>
+                      </div>                   
+                  </div>
+                  
+              </div>
                 <div class="card-action">
               <!--     <a href="#">This is a link</a> -->
-            </div>
+                </div>
           </a></li>
         </c:forEach>
   

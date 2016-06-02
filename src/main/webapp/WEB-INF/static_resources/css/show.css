@@ -5,218 +5,226 @@ body{
 	background-color: rgba(255,255,255,0);
 }
 
-	#aboutimg {
-				position: absolute;
-				top: 20px;
-				left: -10px;
-				right: 0;
-				margin: auto;
-				width: 100px;
-				height: 100px;
-				}
+#intro .content header h2{
+	font-size: 40px;
+	line-height: 1em;
+	letter-spacing: 4px;
+	font-weight:400;
+}
 
-			#a, #b {
-				  box-sizing: border-box;
-				  padding: 0px;
-				  margin:0;
-				  display: inline-block;
-				  width: 49.7%;
-				  height: 100%;
-				  vertical-align: top;
-				  box-sizing:border-box;
-				}
-
-			#a {
-					  background: white;
-					  box-sizing:border-box;
-					  margin-left: -0.3%;
-					  padding:70px;
-					/*  background-color: rgba(250,241,199,1);*/
-					}
-
-			#a .firstImage{
-					width: 100%;
-					height: 300px;
-/*					border:1px solid black;*/
-					margin: 0 auto 0 auto;
-					/*background-image: url("/resources/images/profileBook.jpg");*/
-					background-size: auto 100%;
-					box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-				}
-
-			#a .firstImage img{
-				background-size: auto 100%;
-			}
-
-			#a .firstImageExplain{
-					width: 100%;
-					height: 100px;
-				/*	border:1px solid black;*/
-					margin: 30px auto 0 auto;
-					color: black;
-					text-align: center;
-					font-size: 16px;
-					/*line-height: 100px;*/
-
-
-				}
-
-			#b {
-				  width: 50%;
-				  padding:70px;
-				/*  text-align: justify;*/
-				/*  background-color: rgba(250,241,199,1);*/
-				  overflow-y: auto;
-				  overflow-x: hidden;
-				  color:black;
-				  box-sizing:border-box;
-				  scroll:hidden;
-				  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-				
-
-				}
-
-			#two .style2_right{
-					width: 500px;
-					height: 300px;
-					background-color: black;
-
-				}
-
-				#work .content .container .images .thumb img{
-
-					width: 100%;
-					height: 100%;
-				}
-				
-				
-		/* 	.answerWrite .pull-right{
-					
-					width: 100px;
-					height: 30px;
-					text-align:center;
-				
-				} */
-				
-			.submit_button{
-			
-					width: 100px;
-					height: 30px;
-					border:1px solid black;
-				}
-
-
-			#comments .post_comment{
-				width: 100%;
-				height: 120px;
-				
-				box-sizing:border-box;
-			}
-
-			#comments .post_comment .comment_about_this_post{
-
-				width: 90%;
-				height: 100%;
-		/*		border:3px solid blue;*/
-				border:1px solid;
-				border-color: rgba(0,0,0,0.1);
-				box-sizing:border-box;
-				margin: 0 auto;
-				border-left: none;
-				border-right:none;
-			
-			}
-
-			#comments .post_comment .comment_about_this_post .comment_user_Info{
-				width: 10%;
-				height: 100%;
-				/*border:1px solid black;*/
-				float:left;
-			}
-
-			#comments .post_comment .comment_about_this_post .comment_user_Info .comment_user_thumb{
-				/*border:1px solid black;*/
-				width: 50px;
-				height: 50px;
-				margin: 15% auto 0 auto;
-			
-			}
-
-			#comments .post_comment .comment_about_this_post .comment_user_Info .comment_user_Id{
-				margin-top: 15px;
-
-			}
-
-			#comments .post_comment .comment_about_this_post .comment_contents{
-
-				/*border:1px solid black;*/
-				float: left;
-				width: 80%;
-				height: 100%;
-				padding: 20px;
-				text-align: left;
-			}
-
-	
-		
-
-			#comments .post_comment .comment_about_this_post .comment_contents{
-			
-			/*	border:1px solid black;*/
-				float: left;
-				width: 90%;
-				height: 100%;
-			}
-
-
-
-			#comments .comment_write_area{
-				width: 100%;
-				height: 80%;
-/*				border:3px solid red;*/
-			}
-			#comments .comment_write_area textarea{
-				width: 90%;
-				height: 100%;
-				background-color: #f5f6f7;
-				border-color: rgba(0,0,0,0.1);
-				padding: 20px;
-				margin-top: 20px;
-
-			}
-			#comments .comment_write_area .empty_space{
-				width: 90%;
-				height: 30px;
-			/*	border:1px solid black;*/
-				margin: 0 auto;
-			}
-
-			#comments button{
-				float: right;
-				margin-top: 1%;
-				margin-right: 5%;
-				width:75px;
-				height: 35px;
-				line-height: 25px;
-				background-color:rgba(255,255,255,0);
-				border-radius:20px;
-				transition-duration: 0.5s;
-				transition-timing-function: ease;
-				margin-left:5px;
-				margin-right:5px;
-				border:1px solid;
-				border-color:rgba(0,0,0,0.2);
-				color:rgba(0,0,0,0.5);
-			
-			}
-
-			#comments button:hover {
-		
-		outline:none;
-		background-color:rgba(0,0,0,0.1);
-	
+#aboutimg {
+	position: absolute;
+	top: 20px;
+	left: -10px;
+	right: 0;
+	margin: auto;
+	width: 100px;
+	height: 100px;
 	}
+
+#a, #b {
+	  box-sizing: border-box;
+	  padding: 0px;
+	  margin:0;
+	  display: inline-block;
+	  width: 49.7%;
+	  height: 100%;
+	  vertical-align: top;
+	  box-sizing:border-box;
+	}
+
+#a {
+		  background: white;
+		  box-sizing:border-box;
+		  margin-left: -0.3%;
+		  padding:70px;
+		/*  background-color: rgba(250,241,199,1);*/
+		}
+
+#a .firstImage{
+		width: 90%;
+		height: 300px;
+/*					border:1px solid black;*/
+		margin: 0 auto 0 auto;
+		/*background-image: url("/resources/images/profileBook.jpg");*/
+		background-size: 100% 100%;
+		box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	}
+
+/*#a .firstImage img{
+	background-size: auto 100%;
+}*/
+
+#a .firstImageExplain{
+		width: 100%;
+		height: 100px;
+	/*	border:1px solid black;*/
+		margin: 30px auto 0 auto;
+		color: black;
+		text-align: center;
+		font-size: 16px;
+		/*line-height: 100px;*/
+
+
+	}
+
+#b {
+	  width: 50%;
+	  padding:70px;
+	/*  text-align: justify;*/
+	/*  background-color: rgba(250,241,199,1);*/
+	  overflow-y: auto;
+	  overflow-x: hidden;
+	  color:black;
+	  box-sizing:border-box;
+	  scroll:hidden;
+	  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+
+	}
+
+#two .style2_right{
+		width: 500px;
+		height: 300px;
+		background-color: black;
+
+	}
+
+	#work .content .container .images .thumb img{
+
+		width: 100%;
+		height: 100%;
+	}
+
+
+	
+/* 	.answerWrite .pull-right{
+		
+		width: 100px;
+		height: 30px;
+		text-align:center;
+	
+	} */
+	
+.submit_button{
+
+		width: 100px;
+		height: 30px;
+		border:1px solid black;
+	}
+
+
+#comments .post_comment{
+	width: 100%;
+	height: 120px;
+	
+	box-sizing:border-box;
+}
+
+#comments .post_comment .comment_about_this_post{
+
+	width: 90%;
+	height: 100%;
+/*		border:3px solid blue;*/
+	border:1px solid;
+	border-color: rgba(0,0,0,0.1);
+	box-sizing:border-box;
+	margin: 0 auto;
+	border-left: none;
+	border-right:none;
+
+}
+
+#comments .post_comment .comment_about_this_post .comment_user_Info{
+	width: 10%;
+	height: 100%;
+	/*border:1px solid black;*/
+	float:left;
+}
+
+#comments .post_comment .comment_about_this_post .comment_user_Info .comment_user_thumb{
+	/*border:1px solid black;*/
+	width: 50px;
+	height: 50px;
+	margin: 15% auto 0 auto;
+
+}
+
+#comments .post_comment .comment_about_this_post .comment_user_Info .comment_user_Id{
+	margin-top: 15px;
+
+}
+
+#comments .post_comment .comment_about_this_post .comment_contents{
+
+	/*border:1px solid black;*/
+	float: left;
+	width: 80%;
+	height: 100%;
+	padding: 20px;
+	text-align: left;
+}
+
+
+
+
+#comments .post_comment .comment_about_this_post .comment_contents{
+
+/*	border:1px solid black;*/
+	float: left;
+	width: 90%;
+	height: 100%;
+}
+
+
+
+#comments .comment_write_area{
+	width: 100%;
+	height: 80%;
+/*				border:3px solid red;*/
+}
+#comments .comment_write_area textarea{
+	width: 90%;
+	height: 100%;
+	background-color: #f5f6f7;
+	border-color: rgba(0,0,0,0.1);
+	padding: 20px;
+	margin-top: 20px;
+
+}
+#comments .comment_write_area .empty_space{
+	width: 90%;
+	height: 30px;
+/*	border:1px solid black;*/
+	margin: 0 auto;
+}
+
+#comments button{
+	float: right;
+	margin-top: 1%;
+	margin-right: 5%;
+	width:75px;
+	height: 35px;
+	line-height: 25px;
+	background-color:rgba(255,255,255,0);
+	border-radius:20px;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+	margin-left:5px;
+	margin-right:5px;
+	border:1px solid;
+	border-color:rgba(0,0,0,0.2);
+	color:rgba(0,0,0,0.5);
+
+}
+
+#comments button:hover {
+
+	outline:none;
+	background-color:rgba(0,0,0,0.1);
+
+}
 
 
 /* Reset */

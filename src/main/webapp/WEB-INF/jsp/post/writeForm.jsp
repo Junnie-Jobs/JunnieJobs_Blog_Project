@@ -95,7 +95,7 @@
 						       		 <input name="second_page_image_url" type="hidden" />
 						      </div>
 						       <div class="file-path-wrapper">
-						       		 <input id="file-path validate" type="text" placeholder="중요한 사진 1장만 업로" />
+						       		 <input id="file-path validate" type="text" placeholder="중요한 사진 1장만 업로드" />
 						      </div>  
 						
 					</div>		

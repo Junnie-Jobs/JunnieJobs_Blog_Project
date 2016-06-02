@@ -17,7 +17,9 @@ var SHOW_POST = (function(window) {
                     "<div class='comment_about_this_post'>" +
 
                         "<div class='comment_user_Info'>" +
-                          "<div class='comment_user_thumb'></div> " +
+                          "<div class='comment_user_thumb'>" +
+                          "<img src='{{userPhoto}}'>" +
+                          "</div> " +
                           "<div class='comment_user_Id'>{{userId}}</div>" +
                         "</div>" +
 
@@ -71,7 +73,7 @@ var SHOW_POST = (function(window) {
     }).done(function(values){
         console.log(values);
         console.log(values.comment.contents);
-        var str = comment_template({"userId":values.comment.writer, "contents":values.comment.contents})
+        var str = comment_template({"userPhoto": values.comment.writerImage, "userId":values.comment.writer, "contents":values.comment.contents})
         $(".comment_write_area").before(str);
         $(".comment_input").val("");
 

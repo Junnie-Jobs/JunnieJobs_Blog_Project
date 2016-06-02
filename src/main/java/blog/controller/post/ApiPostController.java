@@ -15,6 +15,7 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,8 +35,10 @@ import blog.model.FileMetadata;
 import blog.model.Post;
 import blog.model.Result;
 import blog.model.User;
+import blog.service.PostService;
 import core.web.argumentresolver.LoginUser;
 import jersey.repackaged.com.google.common.collect.Maps;
+
 
 @Controller
 @RestController
@@ -48,9 +51,11 @@ public class ApiPostController {
 	private CommentDao commentDao;
 	@Autowired
 	private PostDao postDao;
-
+	@Autowired
+	private PostService postService;
+	
 	@RequestMapping(value = "/{postId}/newComment", method = RequestMethod.POST)
-	public Map<String, Object> addAnswer(@LoginUser User loginUser, @PathVariable long postId, String contents)
+	public Map<String, Object> addComment(@LoginUser User loginUser, @PathVariable long postId, String contents)
 			throws Exception {
 
 		Map<String, Object> values = Maps.newHashMap();
@@ -96,5 +101,27 @@ public class ApiPostController {
 		return response;
 
 	}
+	
+	@RequestMapping(value="/{postId}", method=RequestMethod.DELETE)
+	public Result deletePost(@LoginUser User loginUser, @PathVariable long postId) throws Exception {
+		postService.deletePost(postId, loginUser);
+		return Result.ok();
+	}
+	
+	@RequestMapping(value = "/{questionId}/answers/{answerId}", method = RequestMethod.DELETE)
+	public Result deleteComment(@LoginUser User loginUser, @PathVariable long answerId) throws Exception {
+		Comment comment = commentDao.findById(answerId);
+		if (!comment.isSameUser(loginUser)) {
+			return Result.fail("다른 사용자가 쓴 글을 삭제할 수 없습니다.");
+		}
+		
+		try {
+			commentDao.delete(answerId);
+			return Result.ok();
+		} catch (DataAccessException e) {
+			return Result.fail(e.getMessage());
+		}
+	}
+	
 
 }

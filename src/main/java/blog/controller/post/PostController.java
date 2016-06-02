@@ -37,7 +37,8 @@ public class PostController {
 	}
 
 	@RequestMapping(value = "/postProcess", method = RequestMethod.POST)
-	public String postProcess(
+	public ModelAndView postProcess(
+			
 			@LoginUser User loginUser, 
 			String title,
 			String first_page_image_url,
@@ -50,11 +51,10 @@ public class PostController {
 			String third_page_thumb4_image_url, 
 			String third_page_thumb5_image_url, 
 			String third_page_thumb6_image_url)
-	
 			throws Exception {
 
 		log.debug("loginUser : " + loginUser);
-
+		
 		Post post = new Post(
 				loginUser.getName(), 
 				title, 
@@ -70,7 +70,9 @@ public class PostController {
 				third_page_thumb6_image_url);
 
 		postDao.insert(post); //modelAndView를 이용해 전달해줘야 하낟.
-		return "post/postBook";
+		ModelAndView mav = new ModelAndView("/post/postBook");
+		mav.addObject("posts", postDao.findAll());
+		return mav;
 	}
 
 	@RequestMapping(value = "/postBook", method = RequestMethod.GET)

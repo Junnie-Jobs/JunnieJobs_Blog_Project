@@ -39,26 +39,7 @@ public class PostService {
 		if (post == null) {
 			throw new EmptyResultDataAccessException("존재하지 않는 post입니다.", 1);
 		}
-
-		List<Comment> comments = commentDao.findAllByPostId(postId);
-		if (comments.isEmpty()) {
-			commentDao.delete(postId);
-			return;
-		}
-
-		boolean canDelete = true;
-		for (Comment comment : comments) {
-			String writer = post.getWriter();
-			if (!writer.equals(comment.getWriter())) {
-				canDelete = false;
-				break;
-			}
-		}
-
-		if (!canDelete) {
-			throw new CannotOperateException("다른 사용자가 추가한 댓글이 존재해 삭제할 수 없습니다.");
-		}
-
+			
 		commentDao.delete(postId);
 	}
 
