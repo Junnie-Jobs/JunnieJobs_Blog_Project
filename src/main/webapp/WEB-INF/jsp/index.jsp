@@ -41,6 +41,9 @@
 </head>
 <body class="video" data-vide-bg="/resources/video/nightsky.mp4">
 
+<%
+    Object userId = session.getAttribute("userId");
+%>
 <!-- <c:set value="${sessionScope.user.userId}" var="userId" /> -->
 
 	<div class="background">
@@ -53,9 +56,7 @@
 
 			</div>
 
-<%
-    Object userId = session.getAttribute("userId");
-%>
+
 
 <!--       <div class="btn_area">
           <c:choose>
@@ -174,7 +175,9 @@
            FB.api('/me', function(user) {
                  if (user) {
                             var image = document.getElementById('image');
-                            image.src = 'http://graph.facebook.com/' + user.id + '/picture'                    
+                            image.src = 'http://graph.facebook.com/' + user.id + '/picture';
+                            var imagLink = 'http://graph.facebook.com/' + user.id + '/picture';
+                            console.log(imagLink);
                             // $("#image").html()
                             // var name = document.getElementById('name');
                             console.log(user.name);
@@ -189,6 +192,7 @@
                             var user = {};
                             user.userId = userId;
                             user.name = name;
+                            user.image = imagLink;
                             // user.imageLink = image.src;
                             console.log(user);
                             
@@ -197,6 +201,7 @@
                               "url" : (baseURL + "/users/createUser"),
                               "type" : "POST",
                               "data" : user
+
                             }).done(function(){
                                $(".headerText").text(name +"님 여행이 시작됩니다.");
                                $(".headerText").addClass("enrolled");

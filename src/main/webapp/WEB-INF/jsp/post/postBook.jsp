@@ -17,16 +17,19 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/materialize.css">
  <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+<script src="/resources/js/postBook.js"></script>
 </head>
+<body>
 
 <%
     Object userId = session.getAttribute("userId");
 %>
 
+
+
   <nav class="header">
     <div class="nav-wrapper blue lighten-3">
-<!--       <a href="#" class="brand-logo">${sessionScope.user.name}</a> -->
+<!--        <a href="#" class="brand-logo">${sessionScope.user.name}</a>  -->
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
         <li><a href="/post"><i class="material-icons">store</i></a></li>
@@ -39,12 +42,11 @@
   <div class="postBook_wrapper">
 
     <ul class="postBook">
-
         <c:forEach items="${posts}" var="each">
           <li class="post"><a href="/write/postBook/${each.postId}">
             <div class="card small">
                 <div class="card-image">
-                  <img src="http://materializecss.com/images/sample-1.jpg">
+                  <img src="http://localhost:8080/images/upload/${each.first_page_image_url}">
                   <span class="card-title">${each.title}</span>
                 </div>
                 <div class="card-content">

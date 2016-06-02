@@ -140,7 +140,9 @@
 						<div class="comment_about_this_post">
 
 							<div class="comment_user_Info">
-								<div class="comment_user_thumb"></div>	
+								<div class="comment_user_thumb">
+									<img src="${each.writerImage}">
+								</div>	
 								<div class="comment_user_Id">${each.writer}</div>
 							</div>
 

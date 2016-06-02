@@ -26,15 +26,16 @@ public class CommentDao {
 	private JdbcTemplate jdbcTemplate;
 	
     public Comment insert(Comment comment) {
-        String sql = "INSERT INTO comments (writer, contents, createdDate, postId) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO comments (writer, writerImage, contents, createdDate, postId) VALUES (?, ?, ?, ?, ?)";
         PreparedStatementCreator psc = new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
 				PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				pstmt.setString(1, comment.getWriter());
-				pstmt.setString(2, comment.getContents());
-				pstmt.setTimestamp(3, new Timestamp(comment.getTimeFromCreateDate()));
-				pstmt.setLong(4, comment.getPostId());
+				pstmt.setString(2,  comment.getWriterImage());
+				pstmt.setString(3, comment.getContents());
+				pstmt.setTimestamp(4, new Timestamp(comment.getTimeFromCreateDate()));
+				pstmt.setLong(5, comment.getPostId());
 				return pstmt;
 			}
 		};
@@ -45,13 +46,14 @@ public class CommentDao {
     }
 
     public Comment findById(long commentId) {
-        String sql = "SELECT commentId, writer, contents, createdDate, postId FROM comments WHERE commentId = ?";
+        String sql = "SELECT commentId, writer, writerImage, contents, createdDate, postId FROM comments WHERE commentId = ?";
 
         RowMapper<Comment> rm = new RowMapper<Comment>() {
             @Override
             public Comment mapRow(ResultSet rs, int index) throws SQLException {
                 return new Comment(rs.getLong("commentId"), 
                 		rs.getString("writer"), 
+                		rs.getString("writerImage"),
                 		rs.getString("contents"),
                         rs.getTimestamp("createdDate"), 
                         rs.getLong("postId"));
@@ -62,7 +64,7 @@ public class CommentDao {
     }
 
     public List<Comment> findAllByPostId(long postId) {
-        String sql = "SELECT commentId, writer, contents, createdDate FROM comments WHERE postId = ? "
+        String sql = "SELECT commentId, writer, writerImage, contents, createdDate FROM comments WHERE postId = ? "
                 + "order by commentId desc";
 
         RowMapper<Comment> rm = new RowMapper<Comment>() {
@@ -70,6 +72,7 @@ public class CommentDao {
             public Comment mapRow(ResultSet rs, int index) throws SQLException {
                 return new Comment(rs.getLong("commentId"), 
                 		rs.getString("writer"), 
+                		rs.getString("writerImage"),
                 		rs.getString("contents"),
                         rs.getTimestamp("createdDate"), 
                         postId);

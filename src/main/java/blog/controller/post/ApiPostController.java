@@ -54,7 +54,7 @@ public class ApiPostController {
 			throws Exception {
 
 		Map<String, Object> values = Maps.newHashMap();
-		Comment comment = new Comment(loginUser.getUserId(), contents, postId);
+		Comment comment = new Comment(loginUser.getName(), loginUser.getImage(), contents, postId);
 		Comment savedComment = commentDao.insert(comment);
 		postDao.updatecountOfComment(savedComment.getPostId());
 		values.put("comment", savedComment);
@@ -76,7 +76,7 @@ public class ApiPostController {
 		for (MultipartFile file : files) {
 
 			File newFile = new File(path + "/" + file.getOriginalFilename());
-			
+
 			try {
 				FileUtils.writeByteArrayToFile(newFile, file.getBytes());
 				FileMetadata fileMetadata = new FileMetadata();
@@ -89,42 +89,6 @@ public class ApiPostController {
 				e.printStackTrace();
 
 			}
-
-		}
-
-		Map<String, Object> response = new HashMap<>();
-		response.put("files", fileMetadatas);
-		return response;
-
-	}
-
-	@RequestMapping(value = "/fileUploadForOne") // ajax에서 호출하는 부분
-	public Map<String, Object> uploadForOne(MultipartFile file, Post post, HttpSession session)
-			throws IOException {
-
-		List<FileMetadata> fileMetadatas = new ArrayList<>();
-		System.out.println(post);
-		System.out.println(post.getFirst_page_image_url());
-		final String path = session.getServletContext().getRealPath("/images/upload/");
-		log.info("path:{}", path);
-
-		File newFile = new File(path + "/" + file.getOriginalFilename());
-		System.out.println("Test1");
-		try {
-			System.out.println("Test2");
-			FileUtils.writeByteArrayToFile(newFile, file.getBytes());
-			System.out.println("Test3");
-			FileMetadata fileMetadata = new FileMetadata();
-			System.out.println("Test4");
-			fileMetadata.setName(file.getOriginalFilename());
-			System.out.println("Test5");
-			fileMetadata.setUrl(path + file.getOriginalFilename());
-			System.out.println("Test6");
-			fileMetadatas.add(fileMetadata);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-
 		}
 
 		Map<String, Object> response = new HashMap<>();

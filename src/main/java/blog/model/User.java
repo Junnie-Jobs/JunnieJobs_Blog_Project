@@ -15,13 +15,23 @@ public class User {
 	private UserDao userDao;
 	private String userId;
 	private String name;
+	private String image;
 	
 	public User() {
 	}
 
-	public User(String userId, String name) {
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public User(String userId, String name, String image) {
 		this.userId = userId;
 		this.name = name;
+		this.image = image;
 	}
 
 	public String getUserId() {
@@ -32,13 +42,6 @@ public class User {
 		this.userId = userId;
 	}
 
-//	public String getImageLink() {
-//		return imageLink;
-//	}
-//
-//	public void setImageLink(String imageLink) {
-//		this.imageLink = imageLink;
-//	}
 
 	public String getName() {
 		return name;

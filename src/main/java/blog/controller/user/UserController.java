@@ -37,12 +37,8 @@ public class UserController {
 //    }
 //	
 	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
-    public String getUserInfo(Model model, HttpServletRequest request, @RequestParam String userId, @RequestParam String name, HttpSession session) {
-		
-//	    if (loginUser.isGuestUser()) {
-//	        return "redirect:/";
-//	    }
-	    
+    public String getUserInfo(Model model, HttpServletRequest request, @RequestParam String userId, @RequestParam String name, @RequestParam String image, HttpSession session) {
+			    
 	    User user = userDao.findByUserId(userId);
 		session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
 		
@@ -57,6 +53,7 @@ public class UserController {
 			user = new User();		
 			user.setUserId(userId);
 			user.setName(name);	
+			user.setImage(image);
 			userDao.insert(user);;
 			
 			log.debug("새로운 유저가 추가되었습니다.");

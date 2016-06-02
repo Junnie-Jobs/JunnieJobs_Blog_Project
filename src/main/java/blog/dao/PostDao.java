@@ -82,7 +82,7 @@ public class PostDao {
     }
 	
 	public List<Post> findAll() {
-		String sql = "SELECT postId, writer, title, createdDate, countOfComment, "
+		String sql = "SELECT postId, writer,  title, createdDate, countOfComment, "
 				+ "first_page_image_url "
 				+ "FROM posts "
 				+ "order by postId desc";
