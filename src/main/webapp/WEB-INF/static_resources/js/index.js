@@ -101,7 +101,7 @@ var INTRO = (function(window) {
 
   function move_to_story(){
 
-    window.location.href = ("/post");
+    window.location.href = ("/write/postBook/15");
   }
 
   function login(){

@@ -1,6 +1,7 @@
 var writeForm = (function(window) {
 
-  var baseURL = "http://localhost:8080";
+  // var baseURL = "http://localhost:8080";
+  var baseURL = "http://125.209.195.244:7070/images/upload";
 
   function init() {
 
@@ -29,7 +30,9 @@ var writeForm = (function(window) {
         }
       });
     $('#fileupload2').fileupload({
-        url: "http://localhost:8080/api/post/fileUpload",
+
+        // url: "http://localhost:8080/api/post/fileUpload",
+        url: "http://125.209.195.244:7070/api/post/fileUpload";
         acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
         dataType: 'json',
         singleFileUploads: false,
@@ -50,7 +53,8 @@ var writeForm = (function(window) {
         }
       });
     $('#fileupload3').fileupload({
-        url: "http://localhost:8080/api/post/fileUpload",
+        // url: "http://localhost:8080/api/post/fileUpload",
+        url: "http://125.209.195.244:7070/api/post/fileUpload";
         acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
         dataType: 'json',
         singleFileUploads: false,
@@ -60,7 +64,6 @@ var writeForm = (function(window) {
           
           $(".thumb").css('border','none');
           $(".third_page_uploader").css('display', 'none');
-
           $(".thumb1").css('background-image', 'url('+baseURL+'/images/upload/'+data.result.files[0].url+')');
           $(".thumb2").css('background-image', 'url('+baseURL+'/images/upload/'+data.result.files[1].url+')');
           $(".thumb3").css('background-image', 'url('+baseURL+'/images/upload/'+data.result.files[2].url+')');
@@ -68,14 +71,6 @@ var writeForm = (function(window) {
           $(".thumb5").css('background-image', 'url('+baseURL+'/images/upload/'+data.result.files[4].url+')');
           $(".thumb6").css('background-image', 'url('+baseURL+'/images/upload/'+data.result.files[5].url+')');
           
-          //  $(".thumb1").css('background-image', 'url('+baseURL+data.result.files[0].url+')');
-          // $(".thumb2").css('background-image', 'url('+baseURL+data.result.files[1].url+')');
-          // $(".thumb3").css('background-image', 'url('+baseURL+data.result.files[2].url+')');
-          // $(".thumb4").css('background-image', 'url('+baseURL+data.result.files[3].url+')');
-          // $(".thumb5").css('background-image', 'url('+baseURL+data.result.files[4].url+')');
-          // $(".thumb6").css('background-image', 'url('+baseURL+data.result.files[5].url+')');
-
-
           $("input[name='third_page_thumb1_image_url']").val(data.result.files[0].url);
           $("input[name='third_page_thumb2_image_url']").val(data.result.files[1].url);
           $("input[name='third_page_thumb3_image_url']").val(data.result.files[2].url);
