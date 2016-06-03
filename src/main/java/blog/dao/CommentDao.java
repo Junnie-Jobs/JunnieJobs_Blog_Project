@@ -39,7 +39,7 @@ public class CommentDao {
 				return pstmt;
 			}
 		};
-        
+        //test
 		KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(psc, keyHolder);
         return findById(keyHolder.getKey().longValue());
