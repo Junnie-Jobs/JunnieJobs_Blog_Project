@@ -21,12 +21,6 @@ public class MyWebInitializer implements WebApplicationInitializer {
 		CharacterEncodingFilter cef = new CharacterEncodingFilter();
 		cef.setEncoding("UTF-8");
 		cef.setForceEncoding(true);
-//		XssEscapeServletFilter xesf = new XssEscapeServletFilter();
-//		servletContext.addFilter("xssPreventerDefender", xesf).addMappingForUrlPatterns(null, false, "/*");
-//		servletContext.addFilter("xssSaxFilterDefender", xesf).addMappingForUrlPatterns(null, false, "/*");
-//		servletContext.addFilter("xssFilterDefender", xesf).addMappingForUrlPatterns(null, false, "/*");
-		servletContext.addFilter("characterEncodingFilter", cef).addMappingForUrlPatterns(null, false, "/*");
-
 		servletContext.addFilter("httpMethodFilter", HiddenHttpMethodFilter.class)
 				.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), false, "/*");
 
@@ -37,3 +31,10 @@ public class MyWebInitializer implements WebApplicationInitializer {
 		dispatcher.addMapping("/");
 	}
 }
+
+//logic for Xss
+//XssEscapeServletFilter xesf = new XssEscapeServletFilter();
+//servletContext.addFilter("xssPreventerDefender", xesf).addMappingForUrlPatterns(null, false, "/*");
+//servletContext.addFilter("xssSaxFilterDefender", xesf).addMappingForUrlPatterns(null, false, "/*");
+//servletContext.addFilter("xssFilterDefender", xesf).addMappingForUrlPatterns(null, false, "/*");
+//servletContext.addFilter("characterEncodingFilter", cef).addMappingForUrlPatterns(null, false, "/*");
