@@ -1,7 +1,9 @@
 var SHOW_POST = (function(window) {
 
-//  var localURL = "http://localhost:8080";
-	var localURL = "http://125.209.195.244:7070/images/upload
+//   var localURL = "http://localhost:8080";
+   var localURL = "http://localhost:7070";
+	
+//	var localURL = "http://125.209.195.244:7070/images/upload
   var url = $('input[name="url"]').val();
   var first_page_img = $('input[name="first_page_image_url"]').val();
   var second_page_image_url = $('input[name="second_page_image_url"]').val();
@@ -37,7 +39,8 @@ var SHOW_POST = (function(window) {
   var thumb_template = Handlebars.compile(thumb);
 
 //    var baseURL = "http://localhost:8080/images/upload/"
-    var baseURL = "http://125.209.195.244:7070/images/upload";
+  var baseURL = "http://localhost:7070/images/upload/"
+//    var baseURL = "http://125.209.195.244:7070/images/upload";
 
   function init() {
 
