@@ -18,7 +18,6 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.mysql.jdbc.Statement;
-
 import blog.model.Post;
 
 
