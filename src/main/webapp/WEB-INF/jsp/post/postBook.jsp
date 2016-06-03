@@ -48,8 +48,8 @@
           <li class="post"><a href="/write/postBook/${each.postId}">
             <div class="card small">
                   <div class="card-image">
-               <!--      <img src="http://localhost:8080/images/upload/${each.first_page_image_url}"> -->
-                       <img src="http://125.209.195.244:7070/images/upload/${each.first_page_image_url}">
+                    <img src="http://localhost:8080/images/upload/${each.first_page_image_url}">
+                      <!--  <img src="http://125.209.195.244:7070/images/upload/${each.first_page_image_url}"> -->
                     <span class="card-title">${each.title}</span>
                   </div>
 

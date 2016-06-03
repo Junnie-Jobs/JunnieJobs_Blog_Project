@@ -15,8 +15,6 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 import blog.config.WebMvcConfig;
 
-
-
 public class MyWebInitializer implements WebApplicationInitializer {
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {

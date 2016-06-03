@@ -1,7 +1,7 @@
 var writeForm = (function(window) {
 
-   // var baseURL = "http://localhost:8080";
-   var baseURL = "http://125.209.195.244:7070/images/upload";
+   var baseURL = "http://localhost:8080";
+   // var baseURL = "http://125.209.195.244:7070/images/upload";
 
   function init() {
 
@@ -31,8 +31,8 @@ var writeForm = (function(window) {
       });
     $('#fileupload2').fileupload({
 
-         // url: "http://localhost:8080/api/post/fileUpload",
-        url: "http://125.209.195.244:7070/api/post/fileUpload",
+          url: "http://localhost:8080/api/post/fileUpload",
+        // url: "http://125.209.195.244:7070/api/post/fileUpload",
         acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
         dataType: 'json',
         singleFileUploads: false,
@@ -53,8 +53,8 @@ var writeForm = (function(window) {
         }
       });
     $('#fileupload3').fileupload({
-         // url: "http://localhost:8080/api/post/fileUpload",
-        url: "http://125.209.195.244:7070/api/post/fileUpload",
+        url: "http://localhost:8080/api/post/fileUpload",
+        // url: "http://125.209.195.244:7070/api/post/fileUpload",
         acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
         dataType: 'json',
         singleFileUploads: false,

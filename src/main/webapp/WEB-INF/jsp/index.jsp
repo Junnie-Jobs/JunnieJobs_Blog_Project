@@ -157,8 +157,8 @@
 
   function statusChangeCallback(response) {
 
-     // var baseURL = "http://localhost:8080";
-     baseURL = "http://125.209.195.244:7070";
+      var baseURL = "http://localhost:8080";
+     //var baseURL = "http://125.209.195.244:7070";
     console.log('statusChangeCallback');
     console.log(response);
     // response 객체는 현재 로그인 상태를 나타내는 정보를 보여준다. 
