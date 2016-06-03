@@ -194,7 +194,7 @@
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
-		<!-- <outputDirectory>webapp/WEB-INF/classes</outputDirectory> -->
+		<outputDirectory>webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -243,11 +243,13 @@
 					<downloadSources>true</downloadSources>
 				</configuration>
 			</plugin>
+	
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+
 		</plugins>
 	</build>
-	<!-- <plugins> <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
-		</plugin> </plugins> -->
-</build>
-
 
 </project>
