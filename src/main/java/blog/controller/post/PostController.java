@@ -54,6 +54,7 @@ public class PostController {
 			throws Exception {
 
 		log.debug("loginUser : " + loginUser);
+		log.debug("loginUser : " + loginUser);
 		
 		Post post = new Post(
 				loginUser.getName(), 

@@ -69,6 +69,7 @@ public class PostDao {
 		 * 키 칼럼 값을 구하고 싶은 경우에는 PreparedStatementCreator와 Key Holder를 함께
 		 * 사용하는 update() 메서드를 호출해주면 된다.
 		 * */
+		 // 사용하는 update() 메서드를 호출해주면 된다.
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(psc, keyHolder);
         return findById(keyHolder.getKey().longValue());
