@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page import="blog.model.User"%>
 
 <%-- <%@ include file="/include/tags.jspf"%> --%>
 
@@ -27,18 +28,19 @@
 
 
 
-  <nav class="header">
-    <div class="nav-wrapper blue lighten-3">
-<!--        <a href="#" class="brand-logo">${sessionScope.user.name}</a>  -->
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+<!-- Header -->
+      <header id="header">
+        <!-- Nav -->
+          <nav id="nav">
+            <ul class="right">
+              <li class="list-group-item userId">${sessionScope.user.name}</li>
+              <li><a href="/write/postBook/15">Intro</a></li>
+              <li><a href="/write/postBook">Story</a></li>
+              <li class="write"><a href="/write/new">Write</a></li>
+            </ul>
+          </nav>
 
-        <li><a href="/post"><i class="material-icons">store</i></a></li>
-        <li><a href="/postBook"><i class="material-icons">library_books</i></a></li>
-        <li><a href="/write/new"><i class="material-icons">mode_edit</i></a></li>
-      </ul>
-    </div>
-  </nav>
-        
+      </header>
   <div class="postBook_wrapper">
 
     <ul class="postBook">
@@ -46,7 +48,7 @@
           <li class="post"><a href="/write/postBook/${each.postId}">
             <div class="card small">
                   <div class="card-image">
-                   <!--  <img src="http://localhost:8080/images/upload/${each.first_page_image_url}"> -->
+               <!--      <img src="http://localhost:8080/images/upload/${each.first_page_image_url}"> -->
                        <img src="http://125.209.195.244:7070/images/upload/${each.first_page_image_url}">
                     <span class="card-title">${each.title}</span>
                   </div>

@@ -18,13 +18,9 @@ var INTRO = (function(window) {
      $('#logo').addClass('animated fadeInDown');
      $("input:text:visible:first").focus();
      $('input').attr('autocomplete', 'off');
-     $(".headerText").on("click", headerClick);
-     $(".fb-login-button").on("click", fbAsyncInit);
+     // $(".fb-login-button").on("click", fbAsyncInit);
   }
 
-  function headerClick(){
-    alert(1);
-  }
 
   // function checkLoginState(){
   //   console.log("들어옴")

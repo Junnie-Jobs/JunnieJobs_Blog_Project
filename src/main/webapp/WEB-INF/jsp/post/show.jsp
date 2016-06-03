@@ -36,9 +36,9 @@
 					<nav id="nav">
 						<ul>
 							 <li class="list-group-item userId">${sessionScope.user.name}</li>
-							<li><a href="/post">Intro</a></li>
+							<li><a href="/write/postBook/15">Intro</a></li>
 							<li><a href="/write/postBook">Story</a></li>
-							<li class="write"><a href="/write/new">write</a></li>
+							<li class="write"><a href="/write/new">Write</a></li>
 
 						</ul>
 					</nav>

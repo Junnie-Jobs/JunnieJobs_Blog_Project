@@ -17,19 +17,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="/resources/js/jquery.vide.js"></script>
 <style>
-.facebook_login{
 
-  width: 150px;
-  height: 30px;
-  border: 1px solid white;
-  margin-top: -200px;
-  color: white;
-  cursor: pointer;
-}
 
-.facebook_login:hover{
-  background-color: white;
-}
 
 .logins{
   width: 200px;
@@ -47,6 +36,14 @@
 <!-- <c:set value="${sessionScope.user.userId}" var="userId" /> -->
 
 	<div class="background">
+
+    <div class="facebook_login">
+        <div class="login_btn">       
+          <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true" >
+          </div>
+        </div>
+    </div>
+
 		<div class="intro_wrapper">
 
 			<div class="headerText">
@@ -74,11 +71,11 @@
 
 
       <div class="btn_area">
-        <div id="login">Login</div>
+      <!--   <div id="login">Login</div> -->
          <div id="story">Story</div> 
       </div> 
 
-       <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true" ></div>
+
    <!--     onlogin="checkLoginState()" -->
 
  <!-- 			<div class="btn_area">
@@ -86,7 +83,7 @@
 				 <div id="story">Story</div> 
 			</div>  -->
 
-         <form:form cssClass="userCreateForm" name="user" modelAttribute="user" action="/users/createUser" method="post">
+        <!--  <form:form cssClass="userCreateForm" name="user" modelAttribute="user" action="/users/createUser" method="post">
                 <div class="form-group">
                     <form:input path="userId" cssClass="facebookId"/>
                 </div>
@@ -96,7 +93,7 @@
                 <button type="submit" class="submit btn btn-success clearfix pull-right"></button>
                 <div class="clearfix" />
          </form:form>
-
+ -->
 
 		
 			<div class="login_box animated fadeInUp">
@@ -160,8 +157,8 @@
 
   function statusChangeCallback(response) {
 
-    // var baseURL = "http://localhost:8080";
-    baseURL = "http://125.209.195.244:7070";
+     // var baseURL = "http://localhost:8080";
+     baseURL = "http://125.209.195.244:7070";
     console.log('statusChangeCallback');
     console.log(response);
     // response 객체는 현재 로그인 상태를 나타내는 정보를 보여준다. 
@@ -212,7 +209,7 @@
                                console.log($(".facebookId").val());
                                console.log($(".facebookName").val());
                                $(".btn_area #login").css('display','none');
-                         
+                               $("#story").css('display','block');
 
 
                                if(!$(".headerText").hasClass("enrolled")){
