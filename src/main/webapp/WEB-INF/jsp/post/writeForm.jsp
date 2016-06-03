@@ -56,7 +56,7 @@
 <form name="post" action="/write/postProcess" method="post">
 
 <div class="buttons">
-	<button onclick="goUrl('/post');" value="목록">목록</button>
+	<button onclick="goUrl('/post/postBook');" value="목록">목록</button>
 	<button type="submit" value="저장">저장</button>
 </div>
 

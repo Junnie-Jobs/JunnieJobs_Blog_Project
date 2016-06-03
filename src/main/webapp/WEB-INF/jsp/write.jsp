@@ -187,7 +187,7 @@
 
 	<form:form name="post" modelAttribute="post" action="/write/postProcess" method="post" onsubmit="return postWriteCheck();">
 		<div class="buttons">
-			<input type="button" value="목록" onclick="goUrl('/post');" />
+			<input type="button" value="목록" onclick="goUrl('/post/postBook');" />
 			<input type="submit" value="저장하기" />
 		</div>
 		<div class="line"></div>

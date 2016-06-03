@@ -23,7 +23,7 @@
  <input name="third_page_thumb3_image_url" type="hidden" value='${post.third_page_thumb3_image_url}'>
  <input name="third_page_thumb4_image_url" type="hidden" value='${post.third_page_thumb4_image_url}'>
  <input name="third_page_thumb5_image_url" type="hidden" value='${post.third_page_thumb5_image_url}'>
- <input name="third_page_thumb6_image_url" type="hidden" value='${post.third_page_thumb6_image_url}'>
+ <input name="third_page_thumb6_image_url" type="hidden" value='${post.third_page_thumb6_image_`}'>
 
 
 		<!-- Header -->
