@@ -160,8 +160,7 @@
 							<textarea name="contents" class="comment_input" placeholder="글쓴이에게 말을 걸어주세요"></textarea>
 							<div class="empty_space">
 								<button class="comment">댓글</button>
-							</div>
-							
+							</div>							
 					</div>
 			
 				

@@ -1,4 +1,4 @@
-package blog.controller.post;
+package exception;
 
 public class CannotOperateException extends Exception {
 

@@ -65,9 +65,11 @@ var SHOW_POST = (function(window) {
      var data = {};
      data.contents = $(".comment_input").val()
      console.log(data.contents);
+     console.log(url);
+     console.log(baseURL);
 
      $.ajax({
-          "url" : (baseURL + url),
+          "url" : (localURL + url),
           "type" : 'POST',
           "data" : data
 

@@ -25,12 +25,14 @@ public class PostController {
 	private PostDao postDao;
 	@Autowired
 	private PostService postService;
+	
+	private String defaultIntro = "/write/postBook/15";
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String createForm(@LoginUser User loginUser, Model model) throws Exception {
 		if (loginUser.isGuestUser()) {
 			log.debug("Gueset User로 찍혀서 post로 이동");
-			return "redirect:/post";
+			return "redirect:/"+defaultIntro;
 		}
 		model.addAttribute("post", new Post());
 		return "post/writeForm";
