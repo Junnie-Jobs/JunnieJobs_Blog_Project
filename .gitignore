@@ -2,6 +2,5 @@
 /target/
 /.classpath
 /.project
-/jwp-spring.iml
 /.idea/
 /tomcat.8080/
